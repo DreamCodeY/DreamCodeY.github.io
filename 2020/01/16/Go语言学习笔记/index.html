@@ -54,7 +54,7 @@
 <meta property="og:description" content="前言：&amp;emsp;&amp;emsp;学习任何一门语言都需要掌握它都数据类型，就像java语言中包含8种基本数据类型、有变量常量之分，go语言也如此。文档主要记录《GO语言学习笔记》一书都学习笔记、demo，以便后期回顾学习。 2.类型篇2.1变量go语言用关键字var定义变量，跟java不同，go语言类型放在变量名后。如果显示提供初始化值，则可以省略变量类型，由编译器推断。同时，可一次定义多个变量，包括">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-16T07:16:35.000Z">
-<meta property="article:modified_time" content="2020-01-17T01:42:48.823Z">
+<meta property="article:modified_time" content="2020-01-17T04:04:13.546Z">
 <meta property="article:author" content="Mjie.">
 <meta name="twitter:card" content="summary">
 
@@ -204,7 +204,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-17 09:42:48" itemprop="dateModified" datetime="2020-01-17T09:42:48+08:00">2020-01-17</time>
+                <time title="修改时间：2020-01-17 12:04:13" itemprop="dateModified" datetime="2020-01-17T12:04:13+08:00">2020-01-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,7 +262,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &quot;fmt&quot;</span><br><span class="line">func main()&#123;</span><br><span class="line">	const(</span><br><span class="line">    	x uint16 &#x3D; 120</span><br><span class="line">        y				&#x2F;&#x2F;y未指定类型和初始化值，与上一行非空常量右值相同，即y&#x3D;120</span><br><span class="line">        s &#x3D; &quot;abc&quot;</span><br><span class="line">        z				&#x2F;&#x2F;与s类型、右值相同</span><br><span class="line">    )</span><br><span class="line">    fmt.Printf(&quot;%T,%v\n&quot;,y,y)	&#x2F;&#x2F;输出类型和值</span><br><span class="line">    fmt.Printf(&quot;%T,%v\n&quot;,z,z)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uint16,120 string,abc</span><br></pre></td></tr></table></figure>
-<p><strong>枚举：</strong><br>&emsp;&emsp;Go并没有明确意义上的enum定义，不过可借助<strong>iota</strong>标识符实现一组自增常量值来实现枚举类型。</p>
+<p><strong><em>关于占位符的介绍，请参考：</em></strong><a href="https://dreamcodey.github.io/2020/01/16/Go%E8%AF%AD%E8%A8%80-fmt%E6%A0%BC%E5%BC%8F-%E2%80%9C%E5%8D%A0%E4%BD%8D%E7%AC%A6%E2%80%9D/" target="_blank" rel="noopener">Go语言fmt格式“占位符”</a><br><strong>枚举：</strong><br>&emsp;&emsp;Go并没有明确意义上的enum定义，不过可借助<strong>iota</strong>标识符实现一组自增常量值来实现枚举类型。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	x &#x3D; iota 	&#x2F;&#x2F;0</span><br><span class="line">    y			&#x2F;&#x2F;1</span><br><span class="line">    z			&#x2F;&#x2F;2</span><br><span class="line">)</span><br><span class="line">const(</span><br><span class="line">	_ &#x3D; iota	&#x2F;&#x2F;0</span><br><span class="line">    KB &#x3D; 1&lt;&lt;(10*iota)	&#x2F;&#x2F;1&lt;&lt;(10*1)</span><br><span class="line">    MB					&#x2F;&#x2F;1&lt;&lt;(10*2)</span><br><span class="line">    GB					&#x2F;&#x2F;1&lt;&lt;(10*3)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;自增作用范围为常量组。可在多常量定义中使用多个<strong>iota</strong>，它们各自单独计数，只须确保组中每行常量的列数量相同即可。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	_,_ &#x3D; iota,iota*10	&#x2F;&#x2F;0,0*10</span><br><span class="line">    a,b					&#x2F;&#x2F;1,1*10</span><br><span class="line">    c,d					&#x2F;&#x2F;2,2*10</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
@@ -273,8 +273,190 @@
 <p>常量除“只读”外，和变量究竟有什么不同？  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var x &#x3D; 0x100</span><br><span class="line">const y &#x3D; 0x200</span><br><span class="line">func main()&#123;</span><br><span class="line">	println(&amp;x,x)</span><br><span class="line">    println(&amp;y,y)	&#x2F;&#x2F;编译器报错：cannot take the address of y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;不同于变量在运行期分配存储内存(非优化状态)，常量通常会被编译器在预处理阶段直接展开，作为指令数据使用。数字常量不会分配存储空间，无法像变量那样通过内存寻址来取值，因此无法获取地址。  </p>
-<h6 id="2-4基本类型"><a href="#2-4基本类型" class="headerlink" title="2.4基本类型"></a>2.4基本类型</h6><p>在Go语言中，数据类型用于声明函数和属性。数据类型的出现是为了把数据分成所需要用大数据的时候才需要申请大内存，这样可以充分的利用内存。</p>
-<h6 id="2-5引用类型"><a href="#2-5引用类型" class="headerlink" title="2.5引用类型"></a>2.5引用类型</h6><h6 id="2-6类型转换"><a href="#2-6类型转换" class="headerlink" title="2.6类型转换"></a>2.6类型转换</h6><h6 id="2-7自定义类型"><a href="#2-7自定义类型" class="headerlink" title="2.7自定义类型"></a>2.7自定义类型</h6>
+<h6 id="2-4基本类型"><a href="#2-4基本类型" class="headerlink" title="2.4基本类型"></a>2.4基本类型</h6><table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">长度(字节数)</th>
+<th align="center">默认值</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">bool</td>
+<td align="center">1</td>
+<td align="center">false</td>
+<td align="center">布尔型的值只可以是常量<strong>true</strong>或<strong>false</strong>，默认值<strong>false</strong></td>
+</tr>
+<tr>
+<td align="center">byte</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">类似uint8</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">4或8</td>
+<td align="center">0</td>
+<td align="center">默认整数类型，根据目标平台，32位或64位</td>
+</tr>
+<tr>
+<td align="center">uint</td>
+<td align="center">4或8</td>
+<td align="center">0</td>
+<td align="center">默认无符号整数类型，依据目标平台，32位或64位</td>
+</tr>
+<tr>
+<td align="center">int8,uint8</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">int8取值范围-128~127,uint8取值范围0-255</td>
+</tr>
+<tr>
+<td align="center">int16,uint16</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">int16取值范围-32768<del>32767,uint16取值范围0</del>65535</td>
+</tr>
+<tr>
+<td align="center">int32,uint32</td>
+<td align="center">4</td>
+<td align="center">0</td>
+<td align="center">int32取值范围-2147483648<del>2147483647,uint32取值范围0</del>4294967295</td>
+</tr>
+<tr>
+<td align="center">int64,uint64</td>
+<td align="center">8</td>
+<td align="center">0</td>
+<td align="center">int64取值范围-9223372036854775808 ~ 9223372036854775807,uint64取值范围0 ~ 18446744073709551615</td>
+</tr>
+<tr>
+<td align="center">float32</td>
+<td align="center">4</td>
+<td align="center">0.0</td>
+<td align="center">32位浮点数</td>
+</tr>
+<tr>
+<td align="center">float64</td>
+<td align="center">8</td>
+<td align="center">0.0</td>
+<td align="center">64位浮点数(默认浮点数类型)</td>
+</tr>
+<tr>
+<td align="center">complex64</td>
+<td align="center">8</td>
+<td align="center"></td>
+<td align="center">32位实数和虚数</td>
+</tr>
+<tr>
+<td align="center">complex128</td>
+<td align="center">16</td>
+<td align="center"></td>
+<td align="center">64位实数和虚数</td>
+</tr>
+<tr>
+<td align="center">rune</td>
+<td align="center">4</td>
+<td align="center">0</td>
+<td align="center">Unicode Code Point,类似int32</td>
+</tr>
+<tr>
+<td align="center">uintptr</td>
+<td align="center">4,8</td>
+<td align="center">0</td>
+<td align="center">无符号整型，用于存储指针</td>
+</tr>
+<tr>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="center">“”</td>
+<td align="center">字符串，默认值为空字符串而非NULL</td>
+</tr>
+<tr>
+<td align="center">array</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">数组</td>
+</tr>
+<tr>
+<td align="center">struct</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">结构体</td>
+</tr>
+<tr>
+<td align="center">func</td>
+<td align="center"></td>
+<td align="center">nil</td>
+<td align="center">函数类型</td>
+</tr>
+<tr>
+<td align="center">interface</td>
+<td align="center"></td>
+<td align="center">nil</td>
+<td align="center">接口</td>
+</tr>
+<tr>
+<td align="center">map</td>
+<td align="center"></td>
+<td align="center">nil</td>
+<td align="center">字典，引用类型</td>
+</tr>
+<tr>
+<td align="center">slice</td>
+<td align="center"></td>
+<td align="center">nil</td>
+<td align="center">切片，引用类型</td>
+</tr>
+<tr>
+<td align="center">channel</td>
+<td align="center"></td>
+<td align="center">nil</td>
+<td align="center">通道，引用类型</td>
+</tr>
+</tbody></table>
+<p>支持八进制、十六进制以及科学记数法。标准库math定义了各数字类型的取值范围。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import(&quot;fmt&quot; &quot;math&quot;)</span><br><span class="line">func main()&#123;</span><br><span class="line">	a,b,c :&#x3D; 100,0144,0x64		&#x2F;&#x2F;a 十进制 100，b 八进制 100，c 十六进制 100</span><br><span class="line">	fmt.Println(a,b,c)</span><br><span class="line">	fmt.Printf(&quot;0b%b, %#o, %#x\n&quot;,a,a,a)		&#x2F;&#x2F; %b 二进制占位符  %o 八进制表示，%#o 为八进制添加前导0， %x 十六进制表示</span><br><span class="line">	fmt.Println(math.MinInt8,math.MaxInt8)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">100,100,100</span><br><span class="line">0b1100100, 0144, 0x64</span><br><span class="line">-128 127</span><br></pre></td></tr></table></figure>
+<p>标准库strconv可以在不同进制(字符串)间转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a, err :&#x3D; strconv.ParseInt(&quot;1100100&quot;,2,32)</span><br><span class="line">if err !&#x3D; nil&#123;</span><br><span class="line">	println(err.Error())</span><br><span class="line">&#125;</span><br><span class="line">b, _ :&#x3D; strconv.ParseInt(&quot;0144&quot;,8,32)</span><br><span class="line">c, _ :&#x3D; strconv.ParseInt(&quot;64&quot;,16,32)</span><br><span class="line">println(a,b,c)</span><br><span class="line">println(&quot;0b&quot; + strconv.FormatInt(a,2))</span><br><span class="line">println(&quot;0&quot;+strconv.FormatInt(a,8))</span><br><span class="line">println(&quot;0x&quot; + strconv.FormatInt(a,16))</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">100,100,100</span><br><span class="line">0b1100100</span><br><span class="line">0144</span><br><span class="line">0x64</span><br></pre></td></tr></table></figure>
+
+<p><strong>别名：</strong>在官方的语言规范中，专门提到两个别名。byte 是 uint8别名；rune是int32别名。别名类型无须进行类型转换，可直接赋值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">func test(x byte)&#123;</span><br><span class="line">	println(x)</span><br><span class="line">&#125;</span><br><span class="line">func main()&#123;</span><br><span class="line">	var a byte &#x3D; 0x11</span><br><span class="line">    var b uint8 &#x3D; a</span><br><span class="line">    var c uint8 &#x3D; a+b</span><br><span class="line">    test(c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但这并不表示，拥有相同底层结构但就属于别名。就算在64位平台上int和int64结构完全一致，也分属不同类型，须显示转换。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">func add(x,y int) int &#123;</span><br><span class="line">	return x+y</span><br><span class="line">&#125;</span><br><span class="line">func main() &#123;</span><br><span class="line">	var x int &#x3D; 100</span><br><span class="line">    var y int64 &#x3D; x 	&#x2F;&#x2F;编译器报错：cannot use x(type int) as type int64 in assignment</span><br><span class="line">    add(x,y)&#x2F;&#x2F;编译器报错：cannot use y(type int64)as type int in argument to add</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="2-5引用类型"><a href="#2-5引用类型" class="headerlink" title="2.5引用类型"></a>2.5引用类型</h6><p>所谓引用类型(reference type) 特指 slice、map、channel这三种预定义类型。<br>&emsp;&emsp;相比数字、数组等类型，引用类型拥有更复杂但存储结构。除分配内存外，它们还须初始化一系列属性，诸如指针、长度，甚至包括哈希分布、数据队列等。<br>&emsp;&emsp;内置函数new按指定类型长度分配零值内存，返回指针，并不关心类型内部构造和初始化方式。而引用类型则必须使用make函数创建，编译器会将make转换为目标类型专用的创建函数(或指令)，以确保完成全部内存分配和相关属性初始化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;slice</span><br><span class="line">func mkslice() []int &#123;</span><br><span class="line">	s :&#x3D; make([]int,0,10)</span><br><span class="line">	s &#x3D; append(s, 100)</span><br><span class="line">	return s</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;map</span><br><span class="line">func mkmap() map[string]int &#123;</span><br><span class="line">	m :&#x3D; make(map[string]int)</span><br><span class="line">	m[&quot;a&quot;] &#x3D; 1</span><br><span class="line">	return m</span><br><span class="line">&#125;</span><br><span class="line">func main()&#123;</span><br><span class="line">	m :&#x3D; mkmap()</span><br><span class="line">    println(m[&quot;a&quot;])</span><br><span class="line">    s :&#x3D; mkslice()</span><br><span class="line">    println(s[0])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="2-6类型转换"><a href="#2-6类型转换" class="headerlink" title="2.6类型转换"></a>2.6类型转换</h6><ol>
+<li>隐式转换造成的问题远大于它带来的好处。。。<br>&emsp;&emsp;除常量、别名类型以及未命名类型外，Go强制要求使用显示类型转换。加上不支持操作符重载，所以我们总是能确定语句及表达式的明确含义。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a :&#x3D; 10</span><br><span class="line">b :&#x3D; byte(a)</span><br><span class="line">c :&#x3D; a + int(b)	&#x2F;&#x2F;混合类型表达式，必须确保类型一致，也可写成 c :&#x3D; byte(a) + b</span><br></pre></td></tr></table></figure></li>
+<li>同样不能将非bool类型结果当作true/false使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	x :&#x3D; 100</span><br><span class="line">    var b bool &#x3D; x &#x2F;&#x2F;错误：cannot use x(type int)as type bool in assignment</span><br><span class="line">    if x &#123;	&#x2F;&#x2F;错误:non-bool x(type int)used as if condition</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>语法歧义<br>如果转换的目标是指针、单向通道或没有返回值的函数类型，那么必须使用括号，以免造成语法分解错误。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	x :&#x3D; 100</span><br><span class="line">    &#x2F;&#x2F;p :&#x3D; *int(&amp;x) &#x2F;&#x2F;错误:Invalid indirect of &#39;int(&amp;x)&#39; (type &#39;int&#39;) </span><br><span class="line">    			  &#x2F;&#x2F;Cannot convert expression of type *int to type int</span><br><span class="line">    p :&#x3D; (*int)(&amp;x)	&#x2F;&#x2F;转换的目标是指针，必须使用括号</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h6 id="2-7自定义类型"><a href="#2-7自定义类型" class="headerlink" title="2.7自定义类型"></a>2.7自定义类型</h6><p>使用关键字type定义用户自定义类型，包括基于现有基础类型创建，或者是结构体、函数类型等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import (&quot;fmt&quot;)</span><br><span class="line">type flags byte</span><br><span class="line">const(</span><br><span class="line">	read flags &#x3D; 1&lt;&lt;iota</span><br><span class="line">    write</span><br><span class="line">    exec</span><br><span class="line">)</span><br><span class="line">func main()&#123;</span><br><span class="line">	f :&#x3D; read|exec &#x2F;&#x2F;位运算 “或”</span><br><span class="line">    fmt.Printf(&quot;%was b\n&quot;,f)	&#x2F;&#x2F;输出二进制标记位</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">101</span><br></pre></td></tr></table></figure>
+<p>和var、const类似，多个type定义可合并成组，可在函数或代码块内定义局部类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	type(&#x2F;&#x2F;定义组</span><br><span class="line">    		user struct&#123;&#x2F;&#x2F;结构体</span><br><span class="line">            	name string</span><br><span class="line">                age uint8</span><br><span class="line">            &#125;</span><br><span class="line">            event func(string) bool	&#x2F;&#x2F;函数类型</span><br><span class="line">    )</span><br><span class="line">    u :&#x3D; user&#123;&quot;Tom&quot;,20&#125;</span><br><span class="line">    fmt.Println(u)</span><br><span class="line">    var f event &#x3D; func(s string) bool&#123;</span><br><span class="line">    	println(s)</span><br><span class="line">        return s !&#x3D; &quot;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    f(&quot;abc&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>未命名类型</strong><br>&emsp;&emsp;与有明确标识符等bool、int、string等类型相比，数组、切片、字典、通道等类型与具体元素类型或长度等属性相关，故称作未命名类型(unnamed type)。当然，可用type为其提供具体名称，将其改变为命名类型(named type)。<br>具有相同声明等未命名类型被视为同一类型。</p>
+<ul>
+<li>具有相同基类型的指针</li>
+<li>具有相同元素类型和长度的数组(array)</li>
+<li>具有相同元素类型的切片(slice)</li>
+<li>具有相同健值类型的字典(map)</li>
+<li>具有相同数据类型及操作方向的通道（channel）</li>
+<li>具有相同字段序列（字段名、字段类型、标签，以及字段顺序）的结构体（struct）</li>
+<li>具有相同签名（参数和返回值列表，不包括参数名）的函数（func）</li>
+<li>具有相同方法集（方法名、方法签名，不包括顺序）的接口（interface）</li>
+</ul>
+<p>容易被忽视的是struct tag,它也属于类型组成部分，而不仅仅是元数据描述。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	var a struct&#123;&#x2F;&#x2F;匿名结构类型</span><br><span class="line">    	x int &#96;x&#96;</span><br><span class="line">        s string &#96;s&#96;</span><br><span class="line">    &#125;</span><br><span class="line">    var b struct&#123;</span><br><span class="line">    	x int</span><br><span class="line">        s string</span><br><span class="line">    &#125;</span><br><span class="line">    b &#x3D; a &#x2F;&#x2F;错误：cannot use a type struct&#123;x int &quot;x&quot;;s string &quot;s&quot;&#125; as type struct&#123;x int;s string&#125;in assignment</span><br><span class="line">    </span><br><span class="line">    fmt.Println(b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
