@@ -170,6 +170,460 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/16/Go%E8%AF%AD%E8%A8%80-fmt%E6%A0%BC%E5%BC%8F-%E2%80%9C%E5%8D%A0%E4%BD%8D%E7%AC%A6%E2%80%9D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/16/Go%E8%AF%AD%E8%A8%80-fmt%E6%A0%BC%E5%BC%8F-%E2%80%9C%E5%8D%A0%E4%BD%8D%E7%AC%A6%E2%80%9D/" class="post-title-link" itemprop="url">Go语言 fmt格式 “占位符”</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-16 16:33:49 / 修改时间：18:03:54" itemprop="dateCreated datePublished" datetime="2020-01-16T16:33:49+08:00">2020-01-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/go/" itemprop="url" rel="index">
+                    <span itemprop="name">go</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>golang的fmt包实现了格式化I/O函数，类似于C的printf和scanf。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#定义示例类型和变量</span><br><span class="line">type Human struct &#123;</span><br><span class="line">	Name string</span><br><span class="line">&#125;</span><br><span class="line">var people &#x3D; Human&#123;Name:&quot;lwl&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>普通占位符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%v</td>
+<td align="center">相应值的默认格式</td>
+<td align="center">fmt.Printf(“%v”,people)</td>
+<td align="center">{lwl}</td>
+</tr>
+<tr>
+<td align="center">%+v</td>
+<td align="center">打印结构体时，会添加字段名</td>
+<td align="center">fmt.Printf(“%+v”,people)</td>
+<td align="center">{Name:lwl}</td>
+</tr>
+<tr>
+<td align="center">%#v</td>
+<td align="center">相应值的Go语法表示</td>
+<td align="center">fmt.Printf(“%#v”,people)</td>
+<td align="center">main.Human{Name:”lwl”}</td>
+</tr>
+<tr>
+<td align="center">%T</td>
+<td align="center">相应值的类型的Go语法表示</td>
+<td align="center">fmt.Pintf(“%T”,people)</td>
+<td align="center">main.Human</td>
+</tr>
+<tr>
+<td align="center">%%</td>
+<td align="center">字面上的百分号，并非值的占位符</td>
+<td align="center">fmt.Printf(“%%”)</td>
+<td align="center">%</td>
+</tr>
+</tbody></table>
+<p><strong>布尔占位符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%t</td>
+<td align="center">true或false</td>
+<td align="center">fmt.Printf(“%t”,true)</td>
+<td align="center">true</td>
+</tr>
+</tbody></table>
+<p><strong>整数占位符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%b</td>
+<td align="center">二进制表示</td>
+<td align="center">fmt.Printf(“%b”,5)</td>
+<td align="center">101</td>
+</tr>
+<tr>
+<td align="center">%c</td>
+<td align="center">相应Unicode码点所表示的字符</td>
+<td align="center">fmt.Printf(“%c”,0x4E2D)</td>
+<td align="center">中</td>
+</tr>
+<tr>
+<td align="center">%d</td>
+<td align="center">十进制表示</td>
+<td align="center">fmt.Printf(“%d”,0x12)</td>
+<td align="center">18</td>
+</tr>
+<tr>
+<td align="center">%o</td>
+<td align="center">八进制表示</td>
+<td align="center">fmt.Printf(“%o”,10)</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td align="center">%q</td>
+<td align="center">单引号围绕的字符字面值，由Go语法安全地转义</td>
+<td align="center">fmt.Printf(“%q”,0x4E2D)</td>
+<td align="center">‘中’</td>
+</tr>
+<tr>
+<td align="center">%x</td>
+<td align="center">十六进制表示，字母形式为小写a-f</td>
+<td align="center">fmt.Printf(“%x”,13)</td>
+<td align="center">d</td>
+</tr>
+<tr>
+<td align="center">%X</td>
+<td align="center">十六进制表示，字母形式为大写A-F</td>
+<td align="center">fmt.Printf(“%X”,13)</td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td align="center">%U</td>
+<td align="center">Unicode格式：U+1234，等同于”U+%04X”</td>
+<td align="center">fmt.Printf(“%U”,0x4E2D)</td>
+<td align="center">U+4E2D</td>
+</tr>
+</tbody></table>
+<p><strong>符点数和复数的组成部分(实部和虚部)</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%b</td>
+<td align="center">无小数部分的，指数为二的幂的科学计数法，与strconv.FormatFloat 的’b’转换格式一致.例如-123456p-78</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">%e</td>
+<td align="center">科学计数法，例如 -1234.456e+78</td>
+<td align="center">fmt.Printf(“%e”,10.2)</td>
+<td align="center">1.020000e+01</td>
+</tr>
+<tr>
+<td align="center">%E</td>
+<td align="center">科学计数法，例如 -1234.456E+78</td>
+<td align="center">fmt.Printf(“%E”,10.2)</td>
+<td align="center">1.020000E+01</td>
+</tr>
+<tr>
+<td align="center">%f</td>
+<td align="center">有小数点而无指数，例如 123.456｜fmt.Printf(“%f”,10.2)</td>
+<td align="center">10.200000</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">%g</td>
+<td align="center">根据情况选择%e 或 %f 以产生更紧凑的(无末尾的0)输出</td>
+<td align="center">fmt.Printf(“%g”,10.20)</td>
+<td align="center">10.2</td>
+</tr>
+<tr>
+<td align="center">%G</td>
+<td align="center">根据情况选择%E 或 %f 以产生更紧凑的(无末尾的0)输出</td>
+<td align="center">fmt.Printf(“%G”,10.20+2i)</td>
+<td align="center">(10.2+2i)</td>
+</tr>
+</tbody></table>
+<p><strong>字符串与字节切片</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%s</td>
+<td align="center">输出字符串表示(string类型或[]byte)</td>
+<td align="center">fmt.Printf(“%s”,[]byte(“Go语言”))</td>
+<td align="center">Go语言</td>
+</tr>
+<tr>
+<td align="center">%q</td>
+<td align="center">双引号围绕的字符串，由Go语法安全地转义</td>
+<td align="center">fmt.Printf(“%q”,”Go语言”)</td>
+<td align="center">“Go语言”</td>
+</tr>
+<tr>
+<td align="center">%x</td>
+<td align="center">十六进制，小写字母，每字节两个字符</td>
+<td align="center">fmt.Printf(“%x”,”golang”)</td>
+<td align="center">676f6c616e67</td>
+</tr>
+<tr>
+<td align="center">%X</td>
+<td align="center">十六进制，大写字母，每字节两个字符</td>
+<td align="center">fmt.Printf(“%X”,”golang”)</td>
+<td align="center">676F6C616E67</td>
+</tr>
+</tbody></table>
+<p><strong>指针</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%p</td>
+<td align="center">十六进制表示，前缀0x</td>
+<td align="center">fmt.Printf(“%p”,&amp;people)</td>
+<td align="center">0xc0000ac000</td>
+</tr>
+</tbody></table>
+<p><strong>其它标记</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">总打印数值的正负号；对于%q(%+q)保证只输出ASCII编码的字符</td>
+<td align="center">fmt.Printf(“%+q”,”中文”)</td>
+<td align="center">“\u4e2d\u6587”</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">在右侧而非左侧填充空格（左对齐该区域）</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">#</td>
+<td align="center">备用格式：为八进制添加前导0(%#0)；为十六进制添加前导0x(%#x)或0X(%#X)，为%p(%#p)去掉前导0x；如果可能的话，%q(%#q)会打印原始（即反引号围绕的）字符串；如果是可打印字符，%U(%#U)会写出该字符的Unicode编码形式（如字符x会被打印成U+0078 ‘x’）</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">‘ ‘</td>
+<td align="center">(空格)为数值中省略的正负号流出空白(% d)；以十六进制(% x,% X)打印字符串或切片时，在字节之间用空格隔开</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">填充前导的0而非空格；对于数字，这会将填充移到正负号之后</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>golang没有 ‘%u’ 点位符，若整数为无符号类型，默认就会被打印成无符号的。</p>
+<p>宽度与精度的控制格式以Unicode码点为单位。宽度为该数值占用区域的最小宽度；精度为小数点之后的位数。<br>操作数的类型为int时，宽度与精度都可用字符 ‘*’ 表示。</p>
+<p>对于 %g/%G 而言，精度为所有数字的总数，例如：123.45，%.4g 会打印123.5，（而 %6.2f 会打印123.45）。</p>
+<p>%e 和 %f 的默认精度为6</p>
+<p>对大多数的数值类型而言，宽度为输出的最小字符数，如果必要的话会为已格式化的形式填充空格。</p>
+<p>而以字符串类型，精度为输出的最大字符数，如果必要的话会直接截断。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/16/Go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/16/Go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Go语言学习笔记--类型篇</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-16 15:16:35" itemprop="dateCreated datePublished" datetime="2020-01-16T15:16:35+08:00">2020-01-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-17 09:42:48" itemprop="dateModified" datetime="2020-01-17T09:42:48+08:00">2020-01-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/go/" itemprop="url" rel="index">
+                    <span itemprop="name">go</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>前言：<br>&emsp;&emsp;学习任何一门语言都需要掌握它都数据类型，就像java语言中包含8种基本数据类型、有变量常量之分，go语言也如此。文档主要记录《GO语言学习笔记》一书都学习笔记、demo，以便后期回顾学习。</p>
+<h5 id="2-类型篇"><a href="#2-类型篇" class="headerlink" title="2.类型篇"></a>2.类型篇</h5><h6 id="2-1变量"><a href="#2-1变量" class="headerlink" title="2.1变量"></a>2.1变量</h6><p>go语言用关键字var定义变量，跟java不同，go语言类型放在变量名后。如果显示提供初始化值，则可以省略变量类型，由编译器推断。同时，可一次定义多个变量，包括用不同初始值定义不同类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var x int 	&#x2F;&#x2F;定义变量，指定类型为int,如果没有初始化值，运行时会自动初始化为二进制零值</span><br><span class="line"></span><br><span class="line">var y &#x3D; false &#x2F;&#x2F;显示提供初始化值false,可以省略变量类型(bool)，由编译器推断</span><br><span class="line"></span><br><span class="line">var a,b int &#x2F;&#x2F;一次定义相同类型都多个变量</span><br><span class="line">var a,s&#x3D;100,&quot;abc&quot; &#x2F;&#x2F;用不同初始值定义不同类型</span><br></pre></td></tr></table></figure>
+<p>除var关键字外，还可以使用更加简短的变量定义和初始化语法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	x :&#x3D; 100</span><br><span class="line">    a,s :&#x3D; 1,&quot;abc&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简短模式定义变量时，需要注意以下限制：  </p>
+<ul>
+<li><strong>定义变量，同时显示初始化</strong></li>
+<li><strong>不能提供数据类型</strong></li>
+<li><strong>只能用在函数内部</strong></li>
+</ul>
+<h6 id="2-2命名"><a href="#2-2命名" class="headerlink" title="2.2命名"></a>2.2命名</h6><p>&emsp;&emsp;同其他编程语言一样，对变量、常量、函数、自定义类型进行命名，通常优先选用有实际含义，易于理解对字母或单词组合。<br><strong>命名建议：</strong></p>
+<ul>
+<li>以字母或下划线开始，由多个字母、数字和下划线组合而成</li>
+<li>区分大小写</li>
+<li>使用驼峰命名格式</li>
+<li>局部变量优先使用短名</li>
+<li>不可以使用go语言保留的关键字</li>
+<li>不建议使用与预定义常量、类型、内置函数相同的名字</li>
+<li>专有名词通常会全部大写，例如HTML</li>
+</ul>
+<p>&emsp;&emsp;go语言没有java语言中的访问修饰符(public、protected、private)，因此采用首字母大小写来决定其作用域。首字母大写的为导出成员，可被包外引用，首字母小写仅能在包内访问。<br><strong>空标识符</strong><br>&emsp;&emsp;和Python类似，Go也有哥名为“_”的特殊成员。通常作为忽略占位符使用，可作为表达式左值，用“_”接收的值，表示舍弃不用，故无法读取其内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &quot;strconv&quot;</span><br><span class="line">   func main()&#123;	&#x2F;&#x2F;go语言main函数不能有任何参数</span><br><span class="line">   	x,_ :&#x3D; strconv.Atoi(&quot;12&quot;)	&#x2F;&#x2F;忽略Atoi的err返回值</span><br><span class="line">       println(x)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="2-3常量"><a href="#2-3常量" class="headerlink" title="2.3常量"></a>2.3常量</h6><p>&emsp;&emsp;同java语言一样，go语言也有常量，常量用来表示运行时恒定不变的值。常量值必须是编译期可确定的字符、字符串、数字或布尔值。可指定常量类型，或由编译器通过初始化值推断。<br>go语言常量值由const修饰：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const x,y int&#x3D;123,0x22	&#x2F;&#x2F;定义两个常量值x,y 其中y为16进制表示</span><br><span class="line">const s &#x3D; &quot;hello,world!&quot; &#x2F;&#x2F;定义常量s并且省略其类型，由编译器通过初始化值推断</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;可在函数代码块中定义常量，不曾使用的常量不会引发编译错误(变量定义未使用，编译器会报错)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	const x &#x3D; 123 </span><br><span class="line">    println(x)</span><br><span class="line">    const y &#x3D; 1.23 &#x2F;&#x2F;未使用，不会引发编译错误</span><br><span class="line">    &#123;</span><br><span class="line">    	const x &#x3D; &quot;abc&quot;	&#x2F;&#x2F;在不同作用域可以定义同名常量，编译器不会报错</span><br><span class="line">        println(x)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;如果显示指定类型，必须确保常量左右值类型一致，需要时可以做显示类型转换。右值不能超出左边类型取值范围，否则报溢出错误。常量值也可以是某些编译器能计算出结果的表达式，如unsafe.Sizeof、len、cap等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &quot;unsafe&quot;</span><br><span class="line">   &#x2F;&#x2F;常量组</span><br><span class="line">   const(</span><br><span class="line">   	ptrSize &#x3D; unsafe.Sizeof(uintptr(0))</span><br><span class="line">       strSize &#x3D; len(&quot;hello,world!&quot;)</span><br><span class="line">   )</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;在常量组中，如果不指定常量的类型和初始化值，则与上一行非空常量右值相同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &quot;fmt&quot;</span><br><span class="line">func main()&#123;</span><br><span class="line">	const(</span><br><span class="line">    	x uint16 &#x3D; 120</span><br><span class="line">        y				&#x2F;&#x2F;y未指定类型和初始化值，与上一行非空常量右值相同，即y&#x3D;120</span><br><span class="line">        s &#x3D; &quot;abc&quot;</span><br><span class="line">        z				&#x2F;&#x2F;与s类型、右值相同</span><br><span class="line">    )</span><br><span class="line">    fmt.Printf(&quot;%T,%v\n&quot;,y,y)	&#x2F;&#x2F;输出类型和值</span><br><span class="line">    fmt.Printf(&quot;%T,%v\n&quot;,z,z)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uint16,120 string,abc</span><br></pre></td></tr></table></figure>
+<p><strong>枚举：</strong><br>&emsp;&emsp;Go并没有明确意义上的enum定义，不过可借助<strong>iota</strong>标识符实现一组自增常量值来实现枚举类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	x &#x3D; iota 	&#x2F;&#x2F;0</span><br><span class="line">    y			&#x2F;&#x2F;1</span><br><span class="line">    z			&#x2F;&#x2F;2</span><br><span class="line">)</span><br><span class="line">const(</span><br><span class="line">	_ &#x3D; iota	&#x2F;&#x2F;0</span><br><span class="line">    KB &#x3D; 1&lt;&lt;(10*iota)	&#x2F;&#x2F;1&lt;&lt;(10*1)</span><br><span class="line">    MB					&#x2F;&#x2F;1&lt;&lt;(10*2)</span><br><span class="line">    GB					&#x2F;&#x2F;1&lt;&lt;(10*3)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;自增作用范围为常量组。可在多常量定义中使用多个<strong>iota</strong>，它们各自单独计数，只须确保组中每行常量的列数量相同即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	_,_ &#x3D; iota,iota*10	&#x2F;&#x2F;0,0*10</span><br><span class="line">    a,b					&#x2F;&#x2F;1,1*10</span><br><span class="line">    c,d					&#x2F;&#x2F;2,2*10</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>如中断iota自增，则必须显示恢复。且后续自增值按行序递增，而非C语言 enum那样按上一取值递增。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	a &#x3D; iota	&#x2F;&#x2F;0</span><br><span class="line">    b			&#x2F;&#x2F;1</span><br><span class="line">    c &#x3D; 100		&#x2F;&#x2F;100</span><br><span class="line">    d			&#x2F;&#x2F;100 与上一行常量右值表达式相同</span><br><span class="line">    e &#x3D; iota 	&#x2F;&#x2F;4(恢复iota自增，计数包括c、d)</span><br><span class="line">    f			&#x2F;&#x2F;5</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><strong>自增默认数据类型为int，可显示指定类型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	a &#x3D; iota 	&#x2F;&#x2F;int</span><br><span class="line">    b float32 &#x3D; iota	&#x2F;&#x2F;float32</span><br><span class="line">    c &#x3D; iota	&#x2F;&#x2F;int(如不显示指定iota，则与b数据类型相同)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>常量除“只读”外，和变量究竟有什么不同？  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var x &#x3D; 0x100</span><br><span class="line">const y &#x3D; 0x200</span><br><span class="line">func main()&#123;</span><br><span class="line">	println(&amp;x,x)</span><br><span class="line">    println(&amp;y,y)	&#x2F;&#x2F;编译器报错：cannot take the address of y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;不同于变量在运行期分配存储内存(非优化状态)，常量通常会被编译器在预处理阶段直接展开，作为指令数据使用。数字常量不会分配存储空间，无法像变量那样通过内存寻址来取值，因此无法获取地址。  </p>
+<h6 id="2-4基本类型"><a href="#2-4基本类型" class="headerlink" title="2.4基本类型"></a>2.4基本类型</h6><p>在Go语言中，数据类型用于声明函数和属性。数据类型的出现是为了把数据分成所需要用大数据的时候才需要申请大内存，这样可以充分的利用内存。</p>
+<h6 id="2-5引用类型"><a href="#2-5引用类型" class="headerlink" title="2.5引用类型"></a>2.5引用类型</h6><h6 id="2-6类型转换"><a href="#2-6类型转换" class="headerlink" title="2.6类型转换"></a>2.6类型转换</h6><h6 id="2-7自定义类型"><a href="#2-7自定义类型" class="headerlink" title="2.7自定义类型"></a>2.7自定义类型</h6>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/15/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD%E7%9A%84%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E3%80%81%E8%A1%A5%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1231,209 +1685,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/25/Docker%E4%BD%BF%E7%94%A8Dockerfile%E5%88%9B%E5%BB%BACentos-tomcat-jdk-%E9%95%9C%E5%83%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
-      <meta itemprop="name" content="Mjie.">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mjie's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/04/25/Docker%E4%BD%BF%E7%94%A8Dockerfile%E5%88%9B%E5%BB%BACentos-tomcat-jdk-%E9%95%9C%E5%83%8F/" class="post-title-link" itemprop="url">Docker使用Dockerfile创建Centos(tomcat+jdk)镜像</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-04-25 14:40:09" itemprop="dateCreated datePublished" datetime="2019-04-25T14:40:09+08:00">2019-04-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-25 18:32:28" itemprop="dateModified" datetime="2019-12-25T18:32:28+08:00">2019-12-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Docker/" itemprop="url" rel="index">
-                    <span itemprop="name">Docker</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="Docker构建镜像的方法主要有两种"><a href="#Docker构建镜像的方法主要有两种" class="headerlink" title="Docker构建镜像的方法主要有两种:"></a>Docker构建镜像的方法主要有两种:</h4><p>（1）使用docker commit 命令；<br>（2）使用docker build命令和Dockerfile文件（更为强大、灵活和常用）;</p>
-<p>本文主要介绍第二种方式。  </p>
-<h5 id="1-创建DockerFile存储目录"><a href="#1-创建DockerFile存储目录" class="headerlink" title="1.创建DockerFile存储目录"></a>1.创建DockerFile存储目录</h5><p><code>mkdir -p /usr/local/lwl/DockerFiles/centos_tomcat/</code><br>mkdir -p –parents 需要时创建上层目录，如目录早已存在则不当作错误  </p>
-<h5 id="2-下载jdk、tomcat安装包"><a href="#2-下载jdk、tomcat安装包" class="headerlink" title="2.下载jdk、tomcat安装包"></a>2.下载jdk、tomcat安装包</h5><p><img src="/images/pasted-5.png" alt="upload successful"></p>
-<h5 id="3-解压压缩包，并创建Dockerfile文件"><a href="#3-解压压缩包，并创建Dockerfile文件" class="headerlink" title="3.解压压缩包，并创建Dockerfile文件"></a>3.解压压缩包，并创建Dockerfile文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-8.5.35.tar.gz  #解压tomcat</span><br><span class="line">tar -zxvf jdk-8u161-linux-x64.tar.gz  #解压jdk</span><br><span class="line">rm -rf apache-tomcat-8.5.31.tar.gz   #删除安装包</span><br><span class="line">rm -rf jdk-8u161-linux-x64.tar.gz   #删除安装包</span><br><span class="line">touch Dockerfile   #创建文件</span><br></pre></td></tr></table></figure>
-<p>操作完成之后，centos_tomcat目录内容如下：</p>
-<p><img src="/images/pasted-6.png" alt="upload successful">  </p>
-<h5 id="4-编写Dockerfile文件"><a href="#4-编写Dockerfile文件" class="headerlink" title="4.编写Dockerfile文件"></a>4.编写Dockerfile文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#指定基础镜像</span><br><span class="line">FROM centos</span><br><span class="line">#维护者信息</span><br><span class="line">MAINTAINER lwl</span><br><span class="line">#执行命令：创建目录</span><br><span class="line">RUN mkdir -p &#x2F;home&#x2F;java&#x2F;</span><br><span class="line">#将jdk添加到镜像ubuntu的 &#x2F;home&#x2F;java&#x2F;目录下，并命名为jdk</span><br><span class="line">ADD jdk1.8.0_161 &#x2F;home&#x2F;java&#x2F;jdk</span><br><span class="line">#将apache-tomcat-8.5.35添加到镜像ubuntu &#x2F;home&#x2F;java&#x2F;目录下，并命名为tomcat</span><br><span class="line">ADD apache-tomcat-8.5.35 &#x2F;home&#x2F;java&#x2F;tomcat</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#配置环境变量</span><br><span class="line">ENV JAVA_HOME &#x2F;home&#x2F;java&#x2F;jdk</span><br><span class="line">ENV CLASSPATH&#x3D;$JAVA_HOME&#x2F;bin</span><br><span class="line">ENV CATALINA_HOME &#x2F;home&#x2F;java&#x2F;tomcat</span><br><span class="line">ENV PATH $PATH:$JAVA_HOME&#x2F;bin:$CATALINA_HOME&#x2F;bin</span><br><span class="line"></span><br><span class="line">#暴露8080端口</span><br><span class="line">EXPOSE 8080</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#启动时运行tomcat</span><br><span class="line">CMD [&quot;&#x2F;home&#x2F;java&#x2F;tomcat&#x2F;bin&#x2F;catalina.sh&quot;,&quot;run&quot;]</span><br></pre></td></tr></table></figure>
-<p>FROM : 指定基础镜像，并且必须是第一条指令</p>
-<p>MAINTAINER ： 指定作者</p>
-<p>RUN : 运行指定的命令</p>
-<p>ADD : 复制命令，把文件复制到镜像中。</p>
-<p>ENV : 设置环境变量</p>
-<p>EXPOSE : 功能为暴漏容器运行时的监听端口给外部</p>
-<p>CMD : 指定容器启动时运行的命令  </p>
-<h5 id="5-构建Docker镜像"><a href="#5-构建Docker镜像" class="headerlink" title="5.构建Docker镜像"></a>5.构建Docker镜像</h5><p><code>docker build -t reebotoo/centos_tomcat:V1 .</code><br>-t 设置tag名称, 命名规则registry/image:tag（若不添加版本号,默认latest）<br>. 表示使用当前目录下的Dockerfile文件（注意语句后面有一个点）  </p>
-<h5 id="6-启动镜像，访问"><a href="#6-启动镜像，访问" class="headerlink" title="6.启动镜像，访问"></a>6.启动镜像，访问</h5><p><code>docker run -d -p 8080:8080 --name kpi reebotoo/centos_tomcat:V1</code><br>-d 后台运行     </p>
-<p>-p 端口映射  宿主机port : 容器port</p>
-<p>–name 指定容器运行名称<br><code>docker ps #查看当前运行的docker容器</code></p>
-<p><img src="/images/pasted-7.png" alt="upload successful">  </p>
-<h5 id="7-Docker-常用命令"><a href="#7-Docker-常用命令" class="headerlink" title="7.Docker 常用命令"></a>7.Docker 常用命令</h5><p><code>docker ps  #查看镜像启动的容器</code>   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker start containerID&#x2F;containerName #启动一个已有的容器</span><br><span class="line">docker stop containerID&#x2F;containerName #停止一个容器</span><br><span class="line">docker restart containerID&#x2F;containerName #重启一个容器</span><br></pre></td></tr></table></figure>
-<p>其中containerID为容器ID,containerName为容器名称<br><code>docker cp file containerID:/usr/local/ #复制宿主机文件到指定容器/usr/local/目录</code><br><code>docker exec -it containerID bash #进入容器内部文件系统</code></p>
-<p>参考博客    &lt;a href=”<a href="https://blog.csdn.net/qq_37936542/article/details/80824389&quot;target=&quot;_blank&quot;&gt;https://blog.csdn.net/qq_37936542/article/details/80824389">https://blog.csdn.net/qq_37936542/article/details/80824389&quot;target=&quot;_blank&quot;&gt;https://blog.csdn.net/qq_37936542/article/details/80824389</a></a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/docker/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
-      <meta itemprop="name" content="Mjie.">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mjie's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/03/19/docker/" class="post-title-link" itemprop="url">docker初使用</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-03-19 13:15:13" itemprop="dateCreated datePublished" datetime="2019-03-19T13:15:13+08:00">2019-03-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-25 18:32:28" itemprop="dateModified" datetime="2019-12-25T18:32:28+08:00">2019-12-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Docker/" itemprop="url" rel="index">
-                    <span itemprop="name">Docker</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><h2 id="docker基本概念"><a href="#docker基本概念" class="headerlink" title="docker基本概念"></a>docker基本概念</h2><h3 id="1-镜像-Image"><a href="#1-镜像-Image" class="headerlink" title="1.镜像(Image)"></a>1.镜像(Image)</h3><p>镜像，从认识上简单的来说，就是面向对象中的类，相当于一个模板。从本质上来说，镜像相当于一个文件系统。Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。</p>
-<h3 id="2-容器-Container"><a href="#2-容器-Container" class="headerlink" title="2.容器(Container)"></a>2.容器(Container)</h3><p>容器，从认识上来说，就是类创建的实例，就是依据镜像这个模板创建出来的实体。容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的命名空间。因此容器可以拥有自己的root 文件系统、自己的网络配置、自己的进程空间，甚至自己的用户ID 空间。容器内的进程是运行在一个隔离的环境里，使用起来，就好像是在一个独立于宿主的系统下操作一样。这种特性使得容器封装的应用比直接在宿主运行更加安全。</p>
-<h3 id="3-仓库-Repository"><a href="#3-仓库-Repository" class="headerlink" title="3.仓库(Repository)"></a>3.仓库(Repository)</h3><p>仓库，从认识上来说，就好像软件包上传下载站，有各种软件的不同版本被上传供用户下载。镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，Docker Registry 就是这样的服务。</p>
-<h3 id="4-分层存储"><a href="#4-分层存储" class="headerlink" title="4.分层存储"></a>4.分层存储</h3><p>因为镜像包含操作系统完整的root 文件系统，其体积往往是庞大的，因此在Docker设计时，就充分利用Union FS 的技术，将其设计为分层存储的架构。所以严格来说，镜像并非是像一个ISO 那样的打包文件，镜像只是一个虚拟的概念，其实际体现并非由一个文件组成，而是由一组文件系统组成，或者说，由多层文件系统联合组成。</p>
-<p>镜像构建时，会一层层构建，前一层是后一层的基础。每一层构建完就不会再发生改变，后一层上的任何改变只发生在自己这一层。比如，删除前一层文件的操作，实际不是真的删除前一层的文件，而是仅在当前层标记为该文件已删除。在最终容器运行的时候，虽然不会看到这个文件，但是实际上该文件会一直跟随镜像。因此，在构建镜像的时候，需要额外小心，每一层尽量只包含该层需要添加的东西，任何额外的东西应该在该层构建结束前清理掉。</p>
-<p>分层存储的特征还使得镜像的复用、定制变的更为容易。甚至可以用之前构建好的镜像作为基础层，然后进一步添加新的层，以定制自己所需的内容，构建新的镜像。</p>
-<h2 id="Yum安装docker"><a href="#Yum安装docker" class="headerlink" title="Yum安装docker"></a>Yum安装docker</h2><h3 id="1-确保yum包更新到最新"><a href="#1-确保yum包更新到最新" class="headerlink" title="1.确保yum包更新到最新"></a>1.确保yum包更新到最新</h3><p><code>yum update</code></p>
-<h3 id="2-卸载旧版本"><a href="#2-卸载旧版本" class="headerlink" title="2.卸载旧版本"></a>2.卸载旧版本</h3><p><code>yum remove docker  docker-common docker-selinux docker-engine</code></p>
-<h3 id="3-安装需要的软件包，-yum-util-提供yum-config-manager功能，另外两个是devicemapper驱动依赖的"><a href="#3-安装需要的软件包，-yum-util-提供yum-config-manager功能，另外两个是devicemapper驱动依赖的" class="headerlink" title="3.安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的"></a>3.安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的</h3><p><code>yum install -y yum-utils device-mapper-persistent-data lvm2</code></p>
-<h3 id="4-设置yum源"><a href="#4-设置yum源" class="headerlink" title="4.设置yum源"></a>4.设置yum源</h3><p><code>yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</code></p>
-<h3 id="5-可以查看所有仓库中所有docker版本，并选择特定版本安装"><a href="#5-可以查看所有仓库中所有docker版本，并选择特定版本安装" class="headerlink" title="5.可以查看所有仓库中所有docker版本，并选择特定版本安装"></a>5.可以查看所有仓库中所有docker版本，并选择特定版本安装</h3><p><code>yum list docker-ce --showduplicates | sort -r</code><br><img src="/images/20190307171724138_10530.png" alt="仓库中所有docker版本"></p>
-<h3 id="6-安装docker"><a href="#6-安装docker" class="headerlink" title="6.安装docker"></a>6.安装docker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install docker-ce  #由于repo中默认只开启stable仓库，故这里安装的是最新稳定版17.12.0</span><br><span class="line">yum install &lt;FQPN&gt;  # 例如：sudo yum install docker-ce-17.12.0.ce</span><br></pre></td></tr></table></figure>
-<h3 id="7-启动docker并加入开机启动"><a href="#7-启动docker并加入开机启动" class="headerlink" title="7.启动docker并加入开机启动"></a>7.启动docker并加入开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br><span class="line">systemctl enable docker</span><br></pre></td></tr></table></figure>
-<h3 id="8-运行我们的第一个容器"><a href="#8-运行我们的第一个容器" class="headerlink" title="8.运行我们的第一个容器"></a>8.运行我们的第一个容器</h3><p><code>docker run -i -t ubuntu /bin/bash</code><br>首先，我们告诉Docker执行 docker run 命令，并指定 -i 和 -t两个命令行参数。-i 标志保证容器中STDIN(标准输入，一般指键盘输入到缓冲区里的东西)是开启的，尽管我们并没有附着到容器中。-t 告诉Docker为要创建的容器分配一个伪tty终端，这样，新创建的容器才能提供一个交互式shell。<br>接下来，我们告诉Docker基于什么镜像来创建容器，示例中使用的是ubuntu镜像。</p>
-<h2 id="使用第一个容器"><a href="#使用第一个容器" class="headerlink" title="使用第一个容器"></a>使用第一个容器</h2><h3 id="1-检查容器的主机名"><a href="#1-检查容器的主机名" class="headerlink" title="1.检查容器的主机名"></a>1.检查容器的主机名</h3><p><code>hostname</code><br><img src="/images/20190308151820203_24893.png" alt="Docker容器主机名"></p>
-<h3 id="2-检查容器的主机名"><a href="#2-检查容器的主机名" class="headerlink" title="2.检查容器的主机名"></a>2.检查容器的主机名</h3><p><code>cat /etc/hosts</code><br><img src="/images/20190308155423276_9179.png" alt="Docker容器hosts文件"></p>
-<h3 id="3-检查容器的进程"><a href="#3-检查容器的进程" class="headerlink" title="3.检查容器的进程"></a>3.检查容器的进程</h3><p><code>ps -aux</code><br><img src="/images/20190308155645595_24702.png" alt="检查Docker容器的进程"></p>
-<h3 id="4-容器命名"><a href="#4-容器命名" class="headerlink" title="4.容器命名"></a>4.容器命名</h3><p><code>docker run --name lwl_first_continer -i -t ubuntu /bin/bash</code></p>
-<h3 id="5-重新启动已经停止的容器"><a href="#5-重新启动已经停止的容器" class="headerlink" title="5.重新启动已经停止的容器"></a>5.重新启动已经停止的容器</h3><h4 id="1-通过名称启动"><a href="#1-通过名称启动" class="headerlink" title="(1).通过名称启动"></a>(1).通过名称启动</h4><p><code>docker start/restart lwl_first_continer</code></p>
-<h4 id="2-通过ID启动已经停止的容器"><a href="#2-通过ID启动已经停止的容器" class="headerlink" title="(2).通过ID启动已经停止的容器"></a>(2).通过ID启动已经停止的容器</h4><p><code>docker start/restart dcb994ef60cc</code></p>
-<h3 id="6-创建守护式容器"><a href="#6-创建守护式容器" class="headerlink" title="6.创建守护式容器"></a>6.创建守护式容器</h3><h4 id="1-创建守护式容器"><a href="#1-创建守护式容器" class="headerlink" title="(1).创建守护式容器"></a>(1).创建守护式容器</h4><p><code>docker run --name daemon_dave -d ubuntu /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</code><br>我们在上面的docker run 命令使用了-d参数，因此Docker会将容器放到后台运行。我们还在容器要运行的命令里使用了一个while循环，该循环会一直打印hello world，直到容器或其进程停止运行。<br>通过组合使用上面的这些参数，你会发现docker run 命令并没有像上一个容器一样将主机的控制台附着到新的shell会话上，而是仅仅返回了一个容器ID而已，我们还是在主机的命令行之中。如果执行docker ps命令，可以看到一个正在运行的容器。  </p>
-<h4 id="2-获取守护容器的日志"><a href="#2-获取守护容器的日志" class="headerlink" title="(2).获取守护容器的日志"></a>(2).获取守护容器的日志</h4><p><code>docker logs daemon_dave</code><br><img src="/images/20190308165719794_30798.png" alt="查看守护式容器日志"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f -t --since&#x3D;&quot;2019-05-14&quot; --tail&#x3D;10 daemon_dave</span><br><span class="line"></span><br><span class="line">--since : 此参数指定了输出日志开始日期，即只输出指定日期之后的日志。</span><br><span class="line"></span><br><span class="line">-f : 查看实时日志</span><br><span class="line"></span><br><span class="line">-t : 查看日志产生的日期</span><br><span class="line"></span><br><span class="line">-tail&#x3D;10 : 查看最后的10条日志。</span><br><span class="line"></span><br><span class="line">daemon_dave : 容器名称</span><br></pre></td></tr></table></figure>
-<h3 id="7-停止守护式进程"><a href="#7-停止守护式进程" class="headerlink" title="7.停止守护式进程"></a>7.停止守护式进程</h3><p><code>docker stop 211a56c5c393</code><br><code>docker stop daemon_dave</code></p>
-<h3 id="8-列出docker容器"><a href="#8-列出docker容器" class="headerlink" title="8. 列出docker容器"></a>8. 列出docker容器</h3><h4 id="1-列出正在运行的docker容器"><a href="#1-列出正在运行的docker容器" class="headerlink" title="(1).列出正在运行的docker容器"></a>(1).列出正在运行的docker容器</h4><p>  <code>docker ps</code>  </p>
-<h4 id="2-列出宿主机中的所有docker容器"><a href="#2-列出宿主机中的所有docker容器" class="headerlink" title="(2).列出宿主机中的所有docker容器"></a>(2).列出宿主机中的所有docker容器</h4><p><code>docker ps -a</code></p>
-<h3 id="9-深入容器"><a href="#9-深入容器" class="headerlink" title="9.深入容器"></a>9.深入容器</h3><p><code>docker inspect daemon_dave</code><br><img src="/images/20190308170404215_30244.png" alt="查看容器信息">  </p>
-<h3 id="10-删除容器"><a href="#10-删除容器" class="headerlink" title="10.删除容器"></a>10.删除容器</h3><p><code>docker rm daemon_dave</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1506,14 +1757,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="前言：&amp;emsp;&amp;emsp;学习任何一门语言都需要掌握它都数据类型，就像java语言中包含8种基本数据类型、有变量常量之分，go语言也如此。文档主要记录《GO语言学习笔记》一书都学习笔记、demo，以便后期回顾学习。 2.类型篇2.1变量go语言用关键字var定义变量，跟java不同，go语言类型放在变量名后。如果显示提供初始化值，则可以省略变量类型，由编译器推断。同时，可一次定义多个变量，包括">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go语言学习笔记--类型篇">
+<meta property="og:url" content="http://yoursite.com/2020/01/16/Go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Mjie&#39;s Blog">
+<meta property="og:description" content="前言：&amp;emsp;&amp;emsp;学习任何一门语言都需要掌握它都数据类型，就像java语言中包含8种基本数据类型、有变量常量之分，go语言也如此。文档主要记录《GO语言学习笔记》一书都学习笔记、demo，以便后期回顾学习。 2.类型篇2.1变量go语言用关键字var定义变量，跟java不同，go语言类型放在变量名后。如果显示提供初始化值，则可以省略变量类型，由编译器推断。同时，可一次定义多个变量，包括">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-16T07:16:35.000Z">
+<meta property="article:modified_time" content="2020-01-17T01:42:48.823Z">
+<meta property="article:author" content="Mjie.">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/16/Go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Go语言学习笔记--类型篇 | Mjie's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mjie's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/16/Go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Go语言学习笔记--类型篇
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-16 15:16:35" itemprop="dateCreated datePublished" datetime="2020-01-16T15:16:35+08:00">2020-01-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-17 09:42:48" itemprop="dateModified" datetime="2020-01-17T09:42:48+08:00">2020-01-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/go/" itemprop="url" rel="index">
+                    <span itemprop="name">go</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>前言：<br>&emsp;&emsp;学习任何一门语言都需要掌握它都数据类型，就像java语言中包含8种基本数据类型、有变量常量之分，go语言也如此。文档主要记录《GO语言学习笔记》一书都学习笔记、demo，以便后期回顾学习。</p>
+<h5 id="2-类型篇"><a href="#2-类型篇" class="headerlink" title="2.类型篇"></a>2.类型篇</h5><h6 id="2-1变量"><a href="#2-1变量" class="headerlink" title="2.1变量"></a>2.1变量</h6><p>go语言用关键字var定义变量，跟java不同，go语言类型放在变量名后。如果显示提供初始化值，则可以省略变量类型，由编译器推断。同时，可一次定义多个变量，包括用不同初始值定义不同类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var x int 	&#x2F;&#x2F;定义变量，指定类型为int,如果没有初始化值，运行时会自动初始化为二进制零值</span><br><span class="line"></span><br><span class="line">var y &#x3D; false &#x2F;&#x2F;显示提供初始化值false,可以省略变量类型(bool)，由编译器推断</span><br><span class="line"></span><br><span class="line">var a,b int &#x2F;&#x2F;一次定义相同类型都多个变量</span><br><span class="line">var a,s&#x3D;100,&quot;abc&quot; &#x2F;&#x2F;用不同初始值定义不同类型</span><br></pre></td></tr></table></figure>
+<p>除var关键字外，还可以使用更加简短的变量定义和初始化语法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	x :&#x3D; 100</span><br><span class="line">    a,s :&#x3D; 1,&quot;abc&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简短模式定义变量时，需要注意以下限制：  </p>
+<ul>
+<li><strong>定义变量，同时显示初始化</strong></li>
+<li><strong>不能提供数据类型</strong></li>
+<li><strong>只能用在函数内部</strong></li>
+</ul>
+<h6 id="2-2命名"><a href="#2-2命名" class="headerlink" title="2.2命名"></a>2.2命名</h6><p>&emsp;&emsp;同其他编程语言一样，对变量、常量、函数、自定义类型进行命名，通常优先选用有实际含义，易于理解对字母或单词组合。<br><strong>命名建议：</strong></p>
+<ul>
+<li>以字母或下划线开始，由多个字母、数字和下划线组合而成</li>
+<li>区分大小写</li>
+<li>使用驼峰命名格式</li>
+<li>局部变量优先使用短名</li>
+<li>不可以使用go语言保留的关键字</li>
+<li>不建议使用与预定义常量、类型、内置函数相同的名字</li>
+<li>专有名词通常会全部大写，例如HTML</li>
+</ul>
+<p>&emsp;&emsp;go语言没有java语言中的访问修饰符(public、protected、private)，因此采用首字母大小写来决定其作用域。首字母大写的为导出成员，可被包外引用，首字母小写仅能在包内访问。<br><strong>空标识符</strong><br>&emsp;&emsp;和Python类似，Go也有哥名为“_”的特殊成员。通常作为忽略占位符使用，可作为表达式左值，用“_”接收的值，表示舍弃不用，故无法读取其内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &quot;strconv&quot;</span><br><span class="line">   func main()&#123;	&#x2F;&#x2F;go语言main函数不能有任何参数</span><br><span class="line">   	x,_ :&#x3D; strconv.Atoi(&quot;12&quot;)	&#x2F;&#x2F;忽略Atoi的err返回值</span><br><span class="line">       println(x)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="2-3常量"><a href="#2-3常量" class="headerlink" title="2.3常量"></a>2.3常量</h6><p>&emsp;&emsp;同java语言一样，go语言也有常量，常量用来表示运行时恒定不变的值。常量值必须是编译期可确定的字符、字符串、数字或布尔值。可指定常量类型，或由编译器通过初始化值推断。<br>go语言常量值由const修饰：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const x,y int&#x3D;123,0x22	&#x2F;&#x2F;定义两个常量值x,y 其中y为16进制表示</span><br><span class="line">const s &#x3D; &quot;hello,world!&quot; &#x2F;&#x2F;定义常量s并且省略其类型，由编译器通过初始化值推断</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;可在函数代码块中定义常量，不曾使用的常量不会引发编译错误(变量定义未使用，编译器会报错)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	const x &#x3D; 123 </span><br><span class="line">    println(x)</span><br><span class="line">    const y &#x3D; 1.23 &#x2F;&#x2F;未使用，不会引发编译错误</span><br><span class="line">    &#123;</span><br><span class="line">    	const x &#x3D; &quot;abc&quot;	&#x2F;&#x2F;在不同作用域可以定义同名常量，编译器不会报错</span><br><span class="line">        println(x)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;如果显示指定类型，必须确保常量左右值类型一致，需要时可以做显示类型转换。右值不能超出左边类型取值范围，否则报溢出错误。常量值也可以是某些编译器能计算出结果的表达式，如unsafe.Sizeof、len、cap等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &quot;unsafe&quot;</span><br><span class="line">   &#x2F;&#x2F;常量组</span><br><span class="line">   const(</span><br><span class="line">   	ptrSize &#x3D; unsafe.Sizeof(uintptr(0))</span><br><span class="line">       strSize &#x3D; len(&quot;hello,world!&quot;)</span><br><span class="line">   )</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;在常量组中，如果不指定常量的类型和初始化值，则与上一行非空常量右值相同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &quot;fmt&quot;</span><br><span class="line">func main()&#123;</span><br><span class="line">	const(</span><br><span class="line">    	x uint16 &#x3D; 120</span><br><span class="line">        y				&#x2F;&#x2F;y未指定类型和初始化值，与上一行非空常量右值相同，即y&#x3D;120</span><br><span class="line">        s &#x3D; &quot;abc&quot;</span><br><span class="line">        z				&#x2F;&#x2F;与s类型、右值相同</span><br><span class="line">    )</span><br><span class="line">    fmt.Printf(&quot;%T,%v\n&quot;,y,y)	&#x2F;&#x2F;输出类型和值</span><br><span class="line">    fmt.Printf(&quot;%T,%v\n&quot;,z,z)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uint16,120 string,abc</span><br></pre></td></tr></table></figure>
+<p><strong>枚举：</strong><br>&emsp;&emsp;Go并没有明确意义上的enum定义，不过可借助<strong>iota</strong>标识符实现一组自增常量值来实现枚举类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	x &#x3D; iota 	&#x2F;&#x2F;0</span><br><span class="line">    y			&#x2F;&#x2F;1</span><br><span class="line">    z			&#x2F;&#x2F;2</span><br><span class="line">)</span><br><span class="line">const(</span><br><span class="line">	_ &#x3D; iota	&#x2F;&#x2F;0</span><br><span class="line">    KB &#x3D; 1&lt;&lt;(10*iota)	&#x2F;&#x2F;1&lt;&lt;(10*1)</span><br><span class="line">    MB					&#x2F;&#x2F;1&lt;&lt;(10*2)</span><br><span class="line">    GB					&#x2F;&#x2F;1&lt;&lt;(10*3)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;自增作用范围为常量组。可在多常量定义中使用多个<strong>iota</strong>，它们各自单独计数，只须确保组中每行常量的列数量相同即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	_,_ &#x3D; iota,iota*10	&#x2F;&#x2F;0,0*10</span><br><span class="line">    a,b					&#x2F;&#x2F;1,1*10</span><br><span class="line">    c,d					&#x2F;&#x2F;2,2*10</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>如中断iota自增，则必须显示恢复。且后续自增值按行序递增，而非C语言 enum那样按上一取值递增。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	a &#x3D; iota	&#x2F;&#x2F;0</span><br><span class="line">    b			&#x2F;&#x2F;1</span><br><span class="line">    c &#x3D; 100		&#x2F;&#x2F;100</span><br><span class="line">    d			&#x2F;&#x2F;100 与上一行常量右值表达式相同</span><br><span class="line">    e &#x3D; iota 	&#x2F;&#x2F;4(恢复iota自增，计数包括c、d)</span><br><span class="line">    f			&#x2F;&#x2F;5</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><strong>自增默认数据类型为int，可显示指定类型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	a &#x3D; iota 	&#x2F;&#x2F;int</span><br><span class="line">    b float32 &#x3D; iota	&#x2F;&#x2F;float32</span><br><span class="line">    c &#x3D; iota	&#x2F;&#x2F;int(如不显示指定iota，则与b数据类型相同)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>常量除“只读”外，和变量究竟有什么不同？  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var x &#x3D; 0x100</span><br><span class="line">const y &#x3D; 0x200</span><br><span class="line">func main()&#123;</span><br><span class="line">	println(&amp;x,x)</span><br><span class="line">    println(&amp;y,y)	&#x2F;&#x2F;编译器报错：cannot take the address of y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;不同于变量在运行期分配存储内存(非优化状态)，常量通常会被编译器在预处理阶段直接展开，作为指令数据使用。数字常量不会分配存储空间，无法像变量那样通过内存寻址来取值，因此无法获取地址。  </p>
+<h6 id="2-4基本类型"><a href="#2-4基本类型" class="headerlink" title="2.4基本类型"></a>2.4基本类型</h6><p>在Go语言中，数据类型用于声明函数和属性。数据类型的出现是为了把数据分成所需要用大数据的时候才需要申请大内存，这样可以充分的利用内存。</p>
+<h6 id="2-5引用类型"><a href="#2-5引用类型" class="headerlink" title="2.5引用类型"></a>2.5引用类型</h6><h6 id="2-6类型转换"><a href="#2-6类型转换" class="headerlink" title="2.6类型转换"></a>2.6类型转换</h6><h6 id="2-7自定义类型"><a href="#2-7自定义类型" class="headerlink" title="2.7自定义类型"></a>2.7自定义类型</h6>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/15/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD%E7%9A%84%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E3%80%81%E8%A1%A5%E7%A0%81/" rel="prev" title="二进制中的原码、反码、补码">
+      <i class="fa fa-chevron-left"></i> 二进制中的原码、反码、补码
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/16/Go%E8%AF%AD%E8%A8%80-fmt%E6%A0%BC%E5%BC%8F-%E2%80%9C%E5%8D%A0%E4%BD%8D%E7%AC%A6%E2%80%9D/" rel="next" title="Go语言 fmt格式 “占位符”">
+      Go语言 fmt格式 “占位符” <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-类型篇"><span class="nav-number">1.</span> <span class="nav-text">2.类型篇</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#2-1变量"><span class="nav-number">1.1.</span> <span class="nav-text">2.1变量</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-2命名"><span class="nav-number">1.2.</span> <span class="nav-text">2.2命名</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-3常量"><span class="nav-number">1.3.</span> <span class="nav-text">2.3常量</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-4基本类型"><span class="nav-number">1.4.</span> <span class="nav-text">2.4基本类型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-5引用类型"><span class="nav-number">1.5.</span> <span class="nav-text">2.5引用类型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-6类型转换"><span class="nav-number">1.6.</span> <span class="nav-text">2.6类型转换</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-7自定义类型"><span class="nav-number">1.7.</span> <span class="nav-text">2.7自定义类型</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mjie."
+      src="/images/%E7%B4%A2%E9%9A%86.jpg">
+  <p class="site-author-name" itemprop="name">Mjie.</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mjie.</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.....Gemini</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
