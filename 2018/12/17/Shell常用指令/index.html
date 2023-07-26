@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Centos7防火墙相关shell命令1.防火墙新开放端口firewall-cmd -&amp;zwnj;-add-port&#x3D;8301&#x2F;tcp -&amp;zwnj;-permanen 2.查看已开发端口firewall-cmd -&amp;zwnj;-zone&#x3D;public -&amp;zwnj;-list-ports 3.防火墙重启firewall-cmd -&amp;zwnj;-reload   4.进程保护启动nohup ***">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shell常用指令">
+<meta property="og:url" content="http://yoursite.com/2018/12/17/Shell%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Mjie&#39;s Blog">
+<meta property="og:description" content="Centos7防火墙相关shell命令1.防火墙新开放端口firewall-cmd -&amp;zwnj;-add-port&#x3D;8301&#x2F;tcp -&amp;zwnj;-permanen 2.查看已开发端口firewall-cmd -&amp;zwnj;-zone&#x3D;public -&amp;zwnj;-list-ports 3.防火墙重启firewall-cmd -&amp;zwnj;-reload   4.进程保护启动nohup ***">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-3.png">
+<meta property="article:published_time" content="2018-12-17T05:40:08.000Z">
+<meta property="article:modified_time" content="2019-12-25T10:32:27.751Z">
+<meta property="article:author" content="Mjie.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-3.png">
+
+<link rel="canonical" href="http://yoursite.com/2018/12/17/Shell%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Shell常用指令 | Mjie's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mjie's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/Shell%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Shell常用指令
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-17 13:40:08" itemprop="dateCreated datePublished" datetime="2018-12-17T13:40:08+08:00">2018-12-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-25 18:32:27" itemprop="dateModified" datetime="2019-12-25T18:32:27+08:00">2019-12-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Centos7防火墙相关shell命令"><a href="#Centos7防火墙相关shell命令" class="headerlink" title="Centos7防火墙相关shell命令"></a>Centos7防火墙相关shell命令</h2><h3 id="1-防火墙新开放端口"><a href="#1-防火墙新开放端口" class="headerlink" title="1.防火墙新开放端口"></a>1.防火墙新开放端口</h3><p>firewall-cmd -&zwnj;-add-port=8301/tcp -&zwnj;-permanen</p>
+<h3 id="2-查看已开发端口"><a href="#2-查看已开发端口" class="headerlink" title="2.查看已开发端口"></a>2.查看已开发端口</h3><p>firewall-cmd -&zwnj;-zone=public -&zwnj;-list-ports</p>
+<h3 id="3-防火墙重启"><a href="#3-防火墙重启" class="headerlink" title="3.防火墙重启"></a>3.防火墙重启</h3><p>firewall-cmd -&zwnj;-reload  </p>
+<h3 id="4-进程保护启动"><a href="#4-进程保护启动" class="headerlink" title="4.进程保护启动"></a>4.进程保护启动</h3><p>nohup ***  &amp;</p>
+<h2 id="Mysql相关shell命令"><a href="#Mysql相关shell命令" class="headerlink" title="Mysql相关shell命令"></a>Mysql相关shell命令</h2><h3 id="1-MySql-启动"><a href="#1-MySql-启动" class="headerlink" title="1.MySql 启动"></a>1.MySql 启动</h3><p>service mysqld start  </p>
+<h3 id="2-某个数据库是否存在"><a href="#2-某个数据库是否存在" class="headerlink" title="2.某个数据库是否存在"></a>2.某个数据库是否存在</h3><p>show databases like ‘db_name’</p>
+<h3 id="3-某个数据表是否存在"><a href="#3-某个数据表是否存在" class="headerlink" title="3.某个数据表是否存在"></a>3.某个数据表是否存在</h3><p>show table like ‘table_name’  </p>
+<h3 id="4-创建数据库"><a href="#4-创建数据库" class="headerlink" title="4.创建数据库"></a>4.创建数据库</h3><p>create database db_name<br><font color=red>注意：当db_name包含关键字时，应使用 `db_name`,` 不是单引号，是Tab上面符合 </font>  </p>
+<h3 id="5-执行sql文件"><a href="#5-执行sql文件" class="headerlink" title="5.执行sql文件"></a>5.执行sql文件</h3><p>source sql文件，例如：source db.sql</p>
+<h2 id="ln-命令"><a href="#ln-命令" class="headerlink" title="ln 命令"></a>ln 命令</h2><p>Linux ln命令是一个非常重要命令，它的功能是为某一个文件在另外一个位置建立一个同步的链接。</p>
+<p>当我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在 其它的目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。<br>例如：<br><img src="/images/pasted-3.png" alt="upload successful"><br>图片中显示 pm2命令不存在，利用 ln -s 命令即可将pm2命令配置到全局<br><code>ln -s /usr/local/node-v8.9.3-linux-x64/bin/pm2 /usr/local/bin/</code>  </p>
+<p>说明: <code>echo $PATH</code> 指令查看当前系统全局环境PATH路径</p>
+<h3 id="unzip-zip-d-demofolder"><a href="#unzip-zip-d-demofolder" class="headerlink" title="unzip **.zip -d /demofolder"></a>unzip **.zip -d /demofolder</h3><p>解压到指定目录</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/17/Nginx-Linux%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" rel="prev" title="Nginx Linux详细安装部署教程">
+      <i class="fa fa-chevron-left"></i> Nginx Linux详细安装部署教程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/17/Linux-Mysql-%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E5%AD%97%E7%AC%A6%E9%9B%86%E6%B0%B8%E4%B9%85%E4%B8%BAUTF-8/" rel="next" title="Linux Mysql 修改默认字符集永久为UTF-8">
+      Linux Mysql 修改默认字符集永久为UTF-8 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Centos7%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3shell%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">Centos7防火墙相关shell命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%98%B2%E7%81%AB%E5%A2%99%E6%96%B0%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.1.</span> <span class="nav-text">1.防火墙新开放端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9F%A5%E7%9C%8B%E5%B7%B2%E5%BC%80%E5%8F%91%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.2.</span> <span class="nav-text">2.查看已开发端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%98%B2%E7%81%AB%E5%A2%99%E9%87%8D%E5%90%AF"><span class="nav-number">1.3.</span> <span class="nav-text">3.防火墙重启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%BF%9B%E7%A8%8B%E4%BF%9D%E6%8A%A4%E5%90%AF%E5%8A%A8"><span class="nav-number">1.4.</span> <span class="nav-text">4.进程保护启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql%E7%9B%B8%E5%85%B3shell%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">Mysql相关shell命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-MySql-%E5%90%AF%E5%8A%A8"><span class="nav-number">2.1.</span> <span class="nav-text">1.MySql 启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9F%90%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="nav-number">2.2.</span> <span class="nav-text">2.某个数据库是否存在</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%9F%90%E4%B8%AA%E6%95%B0%E6%8D%AE%E8%A1%A8%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="nav-number">2.3.</span> <span class="nav-text">3.某个数据表是否存在</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.4.</span> <span class="nav-text">4.创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%89%A7%E8%A1%8Csql%E6%96%87%E4%BB%B6"><span class="nav-number">2.5.</span> <span class="nav-text">5.执行sql文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ln-%E5%91%BD%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">ln 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#unzip-zip-d-demofolder"><span class="nav-number">3.1.</span> <span class="nav-text">unzip **.zip -d &#x2F;demofolder</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mjie."
+      src="/images/%E7%B4%A2%E9%9A%86.jpg">
+  <p class="site-author-name" itemprop="name">Mjie.</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mjie.</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v6.3.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.....Gemini</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

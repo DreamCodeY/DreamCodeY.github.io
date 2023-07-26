@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Mjie&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Mjie&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Mjie.">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
+</script>
+
+  <title>Mjie's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mjie's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/07/26/B-Tree%E3%80%81B-Tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/26/B-Tree%E3%80%81B-Tree/" class="post-title-link" itemprop="url">B-Tree、B+Tree</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-07-26 10:12:33 / 修改时间：10:20:54" itemprop="dateCreated datePublished" datetime="2023-07-26T10:12:33+08:00">2023-07-26</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>B-Tree</strong><br>&emsp;&emsp;在计算机科学中,B树(B-Tree)是一种自平衡的树,能够保持数据有序.这种数据结构能够让查找数据、顺序访问、插入数据及删除的动作,都在对数(logN)时间内完成.B树,概括来说是一个<font color=#FF0000>一般化的</font><a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%85%83%E6%90%9C%E5%B0%8B%E6%A8%B9" target="_blank" rel="noopener">二叉查找树</a>,一个结点可以拥有2个以上的子节点(注意,二叉树每个节点最多只有两个子节点).与<a href="https://zh.wikipedia.org/wiki/%E5%B9%B3%E8%A1%A1%E6%A0%91" target="_blank" rel="noopener">自平衡二叉查找树</a>不同,B树适用于<strong>读写相对大的数据块的存储系统</strong>,例如磁盘,B树减少定位记录时所经历过的中间过程,从而加快存取速度.B树这种数据结构可以用来描述外部存储,这种数据结构常被应用于数据库和文件系统的实现上. </p>
+<p><strong>B-Tree运用的理念</strong>  </p>
+<ul>
+<li>保持键值有序,以顺序遍历</li>
+<li>使用层次化的索引来最小化磁盘读取</li>
+<li>使用不完全填充的块来加速插入和删除(减少平衡操作)</li>
+<li>通过优雅的遍历算法来保持索引平衡  </li>
+</ul>
+<p><strong>B-Tree的弊端</strong>  </p>
+<ul>
+<li>除非完全重建数据库,否则无法改变键值的最大长度  </li>
+</ul>
+<p><strong>B-Tree的一些术语</strong>  </p>
+<h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>一个<strong>m</strong>阶的B树是一个有以下属性的树</p>
+<p>1.每一个节点最多有<em>m</em>个子节点<br>2.每一个非叶子节点(除根结点)最少有[m/2]个子节点<br>3.如果根节点不是叶子节点,那么它至少有两个子节点<br>4.有k个子节点的非叶子节点拥有k-1个键<br>5.所有叶子节点都在同一层<br><font color=#FF0000>每一个内部节点(非叶子节点)的键将节点的子树分开.</font>例如,如果一个内部节点有3个子节点(3个子树),那么它就必须有两个键:a1和a2.左子树的所有值都必须小于a1,中间子树的所有值都必须在a1和a2之间,右边子树的所有值都必须大于a2.</p>
+<p><img src="/images/pasted-96.png" alt="upload successful"><br>上图是一个n阶B树的一部分,其中叶子节点最多有n个结点,内部节点(非叶子节点)有3个子节点,2个k键.node1指向的子树中,b1-bn所有值都小于a1,node2指向的子树中,c1-cn所有值都介于a1和a2之间,node3指向的子树中,d1-dn所有值都大于a2.</p>
+<p><strong>内部节点</strong><br>&emsp;&emsp;内部节点是除根结点和叶子结点之外的所有节点.它们通常被表示为一组有序的元素和指向子节点的指针.每一个内部节点拥有最多U个,最少L个子节点.元素的数量总是比子节点的数量少一(元素的数量在 L-1 和U-1之间),U必须等于2L或者2L-1;因此,每一个内部节点都至少是半满的.U和L之间的关系意味着两个半满的节点可以合并成一个合法的节点,一个全满的节点可以被分成两个合法的节点(如果父节点有空间容纳移来的一个元素).这些特性使得在B树中删除或插入新的值时可以调整树来保持B树的性质.</p>
+<p><strong>根节点</strong></p>
+<p>根节点拥有子节点数量的上限和内部节点相同,但是没有下限.例如,当整个树中的元素数量小于L-1时,根节点是唯一的节点并且没有任何子节点.</p>
+<p><strong>叶子节点</strong></p>
+<p>叶子节点对元素的数量有相同的限制,但是没有子节点,也没有指向子节点的指针.</p>
+<h5 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h5><p><strong>搜索</strong><br>&emsp;&emsp;B树的搜索和二叉搜索树类似。从根节点开始，从上到下递归的遍历树。在每一层上，搜索的范围被减小到包含了搜索值的子树中。子树值的范围被它的父节点的键确定。</p>
+<p><strong>插入</strong><br>&emsp;&emsp;所有的插入都从根节点开始。要插入一个新的元素，首先搜索这棵树找到新元素应该被添加到的对应节点。将新元素插入到这一节点中的步骤如下:</p>
+<p>1.如果节点拥有的元素数量小于最大值，那么有空间容纳新的元素。将新元素插入到这一节点，且保持节点中元素有序。<br>2.否则的话这一节点已经满了，将它平均地分裂成两个节点：<br>  (1) 从该节点的原有元素和新的元素中选择出中位数<br>  (2) 小于这一中位数的元素放入左边节点，大于这一中位数的元素放入右边节点，中位数作为分隔值。<br>  (3) 分隔值被插入到父节点中，这可能会造成父节点分裂，分裂父节点时可能又会使它的父节点分裂，以此类推。如果没有父节点（这一节点是根节点），就创建一个新的根节点（增加了树的高度）。</p>
+<p><img src="/images/pasted-97.png" alt="upload successful"><br>&emsp;&emsp;如果分裂一直上升到根节点，那么一个新的根节点会被创建，它有一个分隔值和两个子节点。这就是根节点并不像内部节点一样有最少子节点数量限制的原因。每个节点中元素的最大数量是 U-1。当一个节点分裂时，一个元素被移动到它的父节点，但是一个新的元素增加了进来。所以最大的元素数量 U-1 必须能够被分成两个合法的节点。如果 U-1 是奇数，那么 U=2L ，总共有 2L-1 个元素，一个新的节点有 L-1 个元素，另外一个有 L 个元素，都是合法的节点。如果 U-1 是偶数，那么 U=2L-1,总共有 2L-2 个元素。 一半是 L-1，正好是节点允许的最小元素数量。</p>
+<p><strong>删除</strong></p>
+<p>有两种常用的删除策略</p>
+<ol>
+<li>定位并删除元素，然后调整树使它满足约束条件;</li>
+<li>从上到下处理这棵树，在进入一个节点之前，调整树使得之后一旦遇到了要删除的键，它可以被直接删除而不需要再进行调整</li>
+</ol>
+<p><strong>B+Tree</strong><br>&emsp;&emsp;<strong>B+Tree</strong>是一种数据结构,通常用于<em>数据库</em>和<em>操作系统</em>的文件系统中.B+Tree的特点是能够保持数据稳定有序,其插入与修改拥有较稳定的对数(logN)时间复杂度.B+Tree元素自底向上插入,这与二叉树相反. </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/08/03/%E5%B8%B8%E7%94%A8%E5%8D%9A%E5%AE%A2-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/03/%E5%B8%B8%E7%94%A8%E5%8D%9A%E5%AE%A2-1/" class="post-title-link" itemprop="url">常用博客</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-03 15:40:30 / 修改时间：15:44:18" itemprop="dateCreated datePublished" datetime="2021-08-03T15:40:30+08:00">2021-08-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>第一个：<a href="http://www.iteye.com（www.iteye.com）" target="_blank" rel="noopener">http://www.iteye.com（www.iteye.com）</a><br>不解释。</p>
+<p>第二个：<a href="http://www.infoq.com/cn/（英文主站：www.infoq.com）" target="_blank" rel="noopener">http://www.infoq.com/cn/（英文主站：www.infoq.com）</a><br>非常著名的架构师站点，主要面向企业架构，做JaveEE方向的同学应该经常看。</p>
+<p>第三个：<a href="http://www.ibm.com/developerworks/cn/，IBM" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/，IBM</a> developerWorks CN<br>IBM的网站，文章范围很广，但主要也是偏向Java方向。另，这个站的稿费还算比较可观，200元/千字，想赚点辛苦费的同学可以考虑一下，就是周期太长（登稿大概要3个多月，发放稿费能拖到一年之后，鄙视）</p>
+<p>第四个：<a href="http://www.oschina.net/，开源中国" target="_blank" rel="noopener">http://www.oschina.net/，开源中国</a><br>关注最新的开源进展。社区比较杂，比JE还乱，但招聘区比JE好不少，比较多猎头活跃。</p>
+<p>第五个：<a href="http://www.blogjava.net/，BlogJava" target="_blank" rel="noopener">http://www.blogjava.net/，BlogJava</a><br>这个开始有点凑数的嫌疑了，其实去的并不多。BlogJava远不如博客园主站热闹啊。</p>
+<p>第六个：蓝色理想论坛的JS版<br>做JS、UI/UE的人估计都知道，它人气也许比不上51js，但肯定无愧于它的论坛的标题“经典论坛”。这个也是我去得历史最久的站，不过在这里混了超过11年都没混出个靠谱的JS水平，我确实是有够菜的= =#</p>
+<p>至于神马“床上等你”、“51cto”、“itpub”、“赛迪网”之类的，倒是非常出名，但是我自己基本不去就不推了。下面是一些并非众人皆知，但是个人觉得优秀、值得推荐的网站，大多是博客：</p>
+<p>第一个：<a href="http://coolshell.cn/，酷壳。" target="_blank" rel="noopener">http://coolshell.cn/，酷壳。</a><br>我当作娱乐站点来看，博主的观点我并不全部同意，但博主的文风我确实很佩服，实在太欢乐了。很多非常有趣好玩的文章，譬如这个。</p>
+<p>第二个：<a href="http://rednaxelafx.iteye.com/" target="_blank" rel="noopener">http://rednaxelafx.iteye.com/</a><br>在JE撒迦算是名人了，无需他人为其卖广告，但其博客确实值得关注。另，推一下他创建的HLLVM圈。</p>
+<p>第三个：ZOJ / POJ<br>大学时留下来的恶趣味，不适合大众，工作多年，我自己去得越来越少了……人老了真的会忘掉激情么</p>
+<p>第五个：<a href="http://www.open-open.com" target="_blank" rel="noopener">http://www.open-open.com</a><br>这个是后面编辑、补充的，站长是JE的同学（见本帖第一页最后一楼），应当支持一下。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/04/JVM%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/04/JVM%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/" class="post-title-link" itemprop="url">JVM知识回顾</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-04 20:47:13" itemprop="dateCreated datePublished" datetime="2020-12-04T20:47:13+08:00">2020-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-15 09:27:26" itemprop="dateModified" datetime="2020-12-15T09:27:26+08:00">2020-12-15</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h5 id="1-java虚拟机运行时数据区域"><a href="#1-java虚拟机运行时数据区域" class="headerlink" title="1.java虚拟机运行时数据区域"></a>1.java虚拟机运行时数据区域</h5><p>Java虚拟机在执行Java程序过程中，会把它所管理的内存分为若干个不同的数据区域。根据《Java虚拟机规范》的规定，其所管理的内存将会包括以下几个<em>运行时数据区域</em>。</p>
+<p><img src="/images/pasted-85.png" alt="upload successful"></p>
+<h5 id="1-1-程序计数器"><a href="#1-1-程序计数器" class="headerlink" title="1.1 程序计数器"></a>1.1 程序计数器</h5><p>&emsp;&emsp;程序计数器是一块较小的内存空间，它可以看作是当前线程所执行的字节码的行号指示器，通过改变程序计数器的值，来选取将要执行的字节码指令。在多线程环境下，各个线程通过轮流切换、分配处理器时间来执行，因此每个线程需要一个独立的计数器，以便线程切换回来后，能够知道程序执行的位置。<strong>此内存区域是java虚拟机中唯一一个不会出现OOM的区域。</strong><br>&emsp;&emsp;如果线程正在执行的是一个Java方法，则计数器记录的是正在执行的虚拟机字节码指令的地址；如果正在执行的是本地(Native)方法，这个计数器的值则应该为空(Undefined)</p>
+<h5 id="1-2-虚拟机栈"><a href="#1-2-虚拟机栈" class="headerlink" title="1.2 虚拟机栈"></a>1.2 虚拟机栈</h5><p>&emsp;&emsp;栈是一种特殊的线性表，仅能在线性表的一端进行操作，称为入栈和出栈。</p>
+<p><img src="/images/pasted-86.png" alt="upload successful"><br>&emsp;&emsp;虚拟机栈描述的是Java方法执行的内存模型，每个方法被调用的时候，Java虚拟机就会同步创建一个栈帧压入栈中，每一个方法执行完闭就对应着一个栈帧出栈。<em>可以思考一下，为什么递归调用容易出现StackOverflowError异常。</em><br>&emsp;&emsp;调用Java方法时虚拟机会同步生成栈帧，那么栈帧中存放哪些信息呢？  </p>
+<ul>
+<li><strong>局部变量表(Local Variables)</strong></li>
+<li>操作数栈(Opreand Stack)</li>
+<li>动态链接 (Dynamic Linking) （指向运行时常量的方法引用）</li>
+<li>方法出口（方法调用完成）分为<em>常规方法调用完成 <em>；</em>突然方法调用完成</em></li>
+<li>一些附加信息</li>
+</ul>
+<h4 id="第三章Jvm内存分配与垃圾收集"><a href="#第三章Jvm内存分配与垃圾收集" class="headerlink" title="第三章Jvm内存分配与垃圾收集"></a>第三章Jvm内存分配与垃圾收集</h4><p>** 问题 **<br>1.java虚拟机如何分配内存（内存分配原则）<br>2.垃圾收集主要针对哪些区域<br>3.何时会触发GC<br>4.触发GC时虚拟机怎样判断哪些对象存活，哪些对象已经死亡<br>5.垃圾收集算法有哪些<br>6.介绍下主流的虚拟机中包含哪些垃圾收集器<br>7.HotSpot虚拟机垃圾收集算法细节</p>
+<p><strong>JVM主流垃圾收集器</strong></p>
+<p><img src="/images/pasted-92.png" alt="upload successful"></p>
+<center>Jdk主流垃圾收集器</center>  
+
+<h5 id="Serial-‘sɪəriəl-串行-收集器，Serial-Old收集器"><a href="#Serial-‘sɪəriəl-串行-收集器，Serial-Old收集器" class="headerlink" title="Serial( [‘sɪəriəl] )(串行)收集器，Serial Old收集器"></a>Serial( [‘sɪəriəl] )(串行)收集器，Serial Old收集器</h5><p><img src="/images/pasted-93.png" alt="upload successful"></p>
+<center>Serial/Serial Old收集器运行示意图</center>
+
+<p>&emsp;&emsp;如图，Serial收集器是一个单线程工作的收集器，新生代采用标记-复制算法，老年代采用标记-整理算法，垃圾收集时需要暂停所有用户线程。<br>&emsp;&emsp;Serrial收集器是HotSpot虚拟机运行在客户端模式下的默认收集器，有着优于其他收集器的地方，那就是简单而高效(与其他收集器的单线程相比)，对于内存资源受限的环境，它是所有收集器里额外内存消耗最小的；对于单核处理器或处理器核心数较少的环境来说，Serial收集器由于没有线程交互的开销，专心做垃圾收集自然可以获得最高的单线程收集效率。</p>
+<h5 id="ParNew-收集器"><a href="#ParNew-收集器" class="headerlink" title="ParNew 收集器"></a>ParNew 收集器</h5><p><img src="/images/pasted-94.png" alt="upload successful"></p>
+<center>ParNew/Serial Old收集器运行示意图</center>
+
+<p>&emsp;&emsp;ParNew收集器实际上是Serial收集器的多线程并行版本，除了同时使用多条线程进行垃圾收集之外，其余的行为包括Serial收集器可用的所有控制参数（例如：-XX：SurvivorRatio、-XX：PretenureSizeThreshold、-XX：HandlePromotionFailure等）、收集算法、Stop The World、对象分配规则、回收策略等都与Serial收集器完全一致。<br>&emsp;&emsp;ParNew收集器，在单核处理器的环境中绝对不会有比Serial收集器更好的效果，但是随着可以被使用的处理器核心数量的增加，ParNew对于垃圾收集时系统资源的高效利用还是很有好处的。它默认开启的收集线程数与处理器核心数量相同，在处理器核心非常多（譬如32个，现在CPU都是多核加超线程设计，服务器达到或超过32个逻辑核心的情况非常普遍）的环境中，可以使用-XX：ParallelGCThreads参数来限制垃圾收集的线程数。</p>
+<h5 id="Parallel-Scavenge收集器"><a href="#Parallel-Scavenge收集器" class="headerlink" title="Parallel Scavenge收集器"></a>Parallel Scavenge收集器</h5><h5 id="Parallel-Old收集器"><a href="#Parallel-Old收集器" class="headerlink" title="Parallel Old收集器"></a>Parallel Old收集器</h5><h5 id="CMS收集器"><a href="#CMS收集器" class="headerlink" title="CMS收集器"></a>CMS收集器</h5><p><strong>CM收集器执行过程</strong><br>&emsp;&emsp;CMS(Concurrent Mark Sweep)收集器是一种以获取<strong>最短停顿时间</strong>为目标的垃圾收集器。它是基于<strong>标记——清除</strong>算法实现的，它的运作过程相对于前面几种收集器来说要更复杂一些，整个过程分为四个步骤：<br>&emsp;&emsp;1.初始标记(Stop the World)<br>&emsp;&emsp;2.并发标记<br>&emsp;&emsp;3.重新标记(Stop the World)<br>&emsp;&emsp;4.并发清除  </p>
+<p>&emsp;&emsp;初始标记仅仅是标记GC Roots能直接关联到的对象，速度很快；并发标记就是从GC Roots的直接关联对象开始遍历整个对象图，这个过程耗时较长但是不需要停顿用户线程。</p>
+<p><img src="/images/pasted-88.png" alt="upload successful"></p>
+<center>遍历对象图过程</center>
+
+
+<p>而重新标记阶段则是为了修正并发标记阶段用户线程对对象图引用关系的影响。</p>
+<p><img src="/images/pasted-89.png" alt="upload successful"></p>
+<center>并发标记阶段，用户线程对对象图的影响</center>
+最后就是并发清除阶段，清理删除掉标记阶段被标记为已死亡的对象，由于不需要移动存活对象，所以这个阶段也是与用户线程同时并发执行的。
+
+<p><img src="/images/pasted-90.png" alt="upload successful"></p>
+<center>CMS垃圾收集器，运行过程</center>
+**CMS垃圾收集器优缺点**  
+优点：并发收集、低停顿  
+缺点：CMS收集器对处理器资源非常敏感(因为需要并发回收垃圾)；无法处理"浮动垃圾"(Floating Garbage)，有可能出现"并发失败"(Concurrent Mode Failure)，进而导致Full GC的产生；标记——清除算法会生成大量空间碎片，空间碎片过多时，将会给大对象分配时带来很多麻烦，往往会出现老年代还有很多剩余空间，但是无法找到连续的内存空间来分配当前对象，而不得不提起触发Full GC。 
+
+<p><strong>补充</strong><br><em>增量式并发收集器(Incremental Concurrent Mark Sweep/i-CMS)</em><br>&emsp;&emsp;首先，CMS收集器对处理器资源非常敏感。在并发阶段，它虽然不会导致用户线程停顿，但却会因为占用了一部分线程（或者说处理器的资源），而导致应用程序变慢，降级总吞吐量。CMS默认启动的回收线程数是<strong>(处理器核心线程数+3)/4</strong> ，也就是说，如果处理器核心数在四个或以上，并发回收时垃圾收集线程只占用不超过25%的处理器运算资源，并且会随着处理器核心数量的增加而下降。但是当处理器核心数量不足四个时，CMS对用户程序的影响就可能变得很大。如果应用本来的处理器负载就很高，还要分出一半的运算能力去执行收集器线程，就可能导致用户程序的执行速度忽然大幅降低。为了缓解这种情况，虚拟机提供了一种称为“增量式并发收集器”（Incremental Concurrent Mark Sweep/i-CMS）的CMS收集器变种，所做的事情和以前单核处理器年代PC机操作系统靠抢占式多任务来模拟多核并行多任务的思想一样，是在并发标记、清理的时候让收集器线程、用户线程交替运行，尽量减少垃圾收集线程的独占资源的时间，这样整个垃圾收集的过程会更长，但对用户程序的影响就会显得较少一些，直观感受是速度变慢的时间更多了，但速度下降幅度就没有那么明显。实践证明增量式的CMS收集器效果很一般，从JDK 7开始，i-CMS模式已经被声明为“deprecated”，即已过时不再提倡用户使用，到JDK 9发布后i-CMS模式被完全废弃。</p>
+<p>虚拟机参数说明：<br><strong>-XX：CMSInitiatingOccupancyFraction</strong><br>设置CMS收集器在老年代使用了多少空间后(百分比)触发垃圾收集操作，JDK5默认设置为68%，JDK6默认阈值为92%。<br><strong>-XX：+UseCMS-CompactAtFullCollection</strong> (默认是开启的，此参数从JDK 9开始废弃)<br>用于在CMS收集器不得不进行Full GC时开启内存碎片的合并整理过程。<br><strong>-XX：CMSFullGCsBefore-Compaction</strong> (此参数从JDK 9开始废弃)<br>这个参数的作用是要求CMS收集器在执行过若干次（数量由参数值决定）不整理空间的Full GC之后，下一次进入Full GC前会先进行碎片整理（默认值为0，表示每次进入Full GC时都进行碎片整理）。</p>
+<h5 id="G1收集器"><a href="#G1收集器" class="headerlink" title="G1收集器"></a>G1收集器</h5>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/24/Linux%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97%E5%86%85%E5%AE%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/24/Linux%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97%E5%86%85%E5%AE%B9/" class="post-title-link" itemprop="url">Linux查询日志内容</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-24 10:59:31" itemprop="dateCreated datePublished" datetime="2020-04-24T10:59:31+08:00">2020-04-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-26 11:52:28" itemprop="dateModified" datetime="2020-05-26T11:52:28+08:00">2020-05-26</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.查询日志中含有某个关键字的信息<br>cat app.log |grep ‘error’</p>
+<p>2.查询日志尾部最后10行的日志<br>tail -n 10 app.log</p>
+<p>3.查询10行之后的所有日志<br>tail -n +10 app.log</p>
+<p>4.查询日志文件中的头10行日志<br>head -n 10 app.log</p>
+<p>5.查询日志文件除了最后10行的其他所有日志<br>head -n -10 app.log</p>
+<p>6.查询日志中含有某个关键字的信息,显示出行号(在1的基础上修改)<br>cat -n app.log |grep ‘error’</p>
+<p>7.显示92行,后20行的日志 即 92-102<br>cat -n app.log |tail -n +92|head -n 20</p>
+<p>8.根据日期时间段查询(前提日志总必须打印日期,先通过grep确定是否有该时间点)<br>sed -n ‘/2018-06-01 16:00:20/,/2018-06-01 16:06:36/p’ app.log</p>
+<p>9.使用more和less命令(分页查看,使用空格翻页)<br>cat -n app.log |grep “error” |more</p>
+<p>10.吧日志保存到文件<br>cat -n app.log |grep “error” &gt; temp.txt</p>
+<p>11.将指定时间的日志导入到文件中<br>cat -n logs/catalina.out ‘/2018-06-08 00:00:20/,/2018-06-06 16:06:36/p’ &gt; pay.out</p>
+<p>12.显示1000行到3000行之间到内容</p>
+<p>cat -n app.log | head -n 3000 | tail -n +3000</p>
+<p>原文地址：<a href="https://www.cnblogs.com/tygtyg/p/10448631.html" target="_blank" rel="noopener">https://www.cnblogs.com/tygtyg/p/10448631.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/MySQL%E4%BA%8B%E5%8A%A1%E8%AF%A6%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/13/MySQL%E4%BA%8B%E5%8A%A1%E8%AF%A6%E8%A7%A3/" class="post-title-link" itemprop="url">MySQL事务详解</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-13 13:07:27" itemprop="dateCreated datePublished" datetime="2020-04-13T13:07:27+08:00">2020-04-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-14 13:38:36" itemprop="dateModified" datetime="2020-04-14T13:38:36+08:00">2020-04-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&emsp;&emsp;MySQL事务主要用于处理多个相关联的数据操作。比如，在人员管理系统中，当删除一个人员时，既需要删除人员的基本信息，也要删除与该人员相关的信息，如信箱、文章等。这一系列等数据库操作语句就构成一个事务！  </p>
+<ul>
+<li>在MySQL中只有使用了<strong>Innodb</strong>数据库引擎的数据库或表才支持事务。</li>
+<li>事务处理可以用来维护数据库的完整性，保证多个SQL语句要么全部执行，要么全部不执行。</li>
+<li>事务用来管理insert、update、delete语句</li>
+</ul>
+<h4 id="事务的基本要素（ACID）"><a href="#事务的基本要素（ACID）" class="headerlink" title="事务的基本要素（ACID）"></a>事务的基本要素（ACID）</h4><h5 id="1-原子性-Atomicity"><a href="#1-原子性-Atomicity" class="headerlink" title="1. 原子性(Atomicity)"></a>1. 原子性(Atomicity)</h5><p>事务开启后的所有操作，要么全部执行，要么全部不执行，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚(rollback)到事务开始前的状态，就像整个事务从来没有执行过一样。也就是说事务是一个不可分割的整体，就像化学中学过的原子，是物质构成的基本单位。</p>
+<h5 id="2-一致性-Consistency"><a href="#2-一致性-Consistency" class="headerlink" title="2. 一致性(Consistency)"></a>2. 一致性(Consistency)</h5><p>事务开始前和结束后，数据库的完整性约束没有被破坏。比如A向B转账，不应该A账户扣了钱，B账户却没有收到。</p>
+<h6 id="3-隔离性-Isolation"><a href="#3-隔离性-Isolation" class="headerlink" title="3. 隔离性(Isolation)"></a>3. 隔离性(Isolation)</h6><p>数据库允许多个并发事务同时对其数据进行读写和修改，隔离性可以防止多个事务并发执行时由于交叉而导致数据的不一致。事务隔离分为四个不同级别，包括读未提交(read uncommitted)、读提交(read committed)、可重复读(repeatable read)和串行化(Serializable)。</p>
+<h5 id="4-持久性-Durability"><a href="#4-持久性-Durability" class="headerlink" title="4. 持久性(Durability)"></a>4. 持久性(Durability)</h5><p>事务处理结束后，对数据的修改就是永久性的，即便系统故障也不会丢失。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在 MySQL 命令行的默认设置下，事务都是自动提交的，即执行 SQL 语句后就会马上执行 COMMIT 操作。因此要显式地开启一个事务务须使用命令 BEGIN 或 START TRANSACTION，或者执行命令 SET AUTOCOMMIT&#x3D;0，用来禁止使用当前会话的自动提交。</span><br></pre></td></tr></table></figure>
+
+<h4 id="事务的并发问题"><a href="#事务的并发问题" class="headerlink" title="事务的并发问题"></a>事务的并发问题</h4><h5 id="脏读-dirty-read"><a href="#脏读-dirty-read" class="headerlink" title="脏读(dirty read)"></a>脏读(dirty read)</h5><p>A事务读取B事务尚未提交的数据，并在这个数据的基础上操作。如果B事务回滚，那么A事务读取到的就是脏数据。</p>
+<p><img src="/images/pasted-63.png" alt="upload successful"><br>在这个场景中，B事务希望取款500元而后又做了撤销动作，而A事务往相同的账户中存入100元，就因为A事务读取了B事务未提交的数据，因而造成账户白白丢失500元。</p>
+<h5 id="不可重复读-unrepeatable-read"><a href="#不可重复读-unrepeatable-read" class="headerlink" title="不可重复读(unrepeatable read)"></a>不可重复读(unrepeatable read)</h5><p>事务A多次读取同一数据，事务B在事务A多次读取的过程中，对数据做了更新并提交，导致事务A多次读取同一数据时，结果不一致。</p>
+<p><img src="/images/pasted-64.png" alt="upload successful"><br>在这个场景中，A在取款事务的过程中，B往该账户转账100元，A再次读取账户的余额发生不一致。</p>
+<h5 id="幻读-phantom-read"><a href="#幻读-phantom-read" class="headerlink" title="幻读(phantom read)"></a>幻读(phantom read)</h5><p>系统管理员A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是系统管理员B就在这个时候插入了一条具体分数的记录，当系统管理员A改结束后发现还有一条记录没有改过来，就好像发生了幻觉一样，这就叫幻读。</p>
+<h4 id="事务的隔离级别"><a href="#事务的隔离级别" class="headerlink" title="事务的隔离级别"></a>事务的隔离级别</h4><table>
+<thead>
+<tr>
+<th align="center">事务隔离级别</th>
+<th align="center">脏读</th>
+<th align="center">不可重复读</th>
+<th align="center">幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">读未提交（read-uncommitted）</td>
+<td align="center">是</td>
+<td align="center">是</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">读已提交（read committed）</td>
+<td align="center">否</td>
+<td align="center">是</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">可重复读（repeatable-read）</td>
+<td align="center">否</td>
+<td align="center">否</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">串行化（serializable）</td>
+<td align="center">否</td>
+<td align="center">否</td>
+<td align="center">否</td>
+</tr>
+</tbody></table>
+<p>MySQL数据库默认的事务隔离级别为repeatable-read</p>
+<p><img src="/images/pasted-65.png" alt="upload successful"></p>
+<h4 id="举例验证各个隔离级别"><a href="#举例验证各个隔离级别" class="headerlink" title="举例验证各个隔离级别"></a>举例验证各个隔离级别</h4><h5 id="1-读未提交"><a href="#1-读未提交" class="headerlink" title="1.读未提交"></a>1.读未提交</h5><p>（1）打开一个客户端A，并设置当前事务模式为read uncommitted（未提交读），查询表account的初始值：<br><img src="/images/pasted-66.png" alt="upload successful"><br>（2）在客户端A的事务提交之前，打开另一个客户端B，更新表account：<br><img src="/images/pasted-67.png" alt="upload successful"><br>（3）这时，虽然客户端B的事务还没提交，但是客户端A就可以查询到B已经更新的数据：<br><img src="/images/pasted-68.png" alt="upload successful"><br>（4）一旦客户端B的事务因为某种原因回滚，所有的操作都将会被撤销，那客户端A查询到的数据其实就是脏数据：<br><img src="/images/pasted-69.png" alt="upload successful"><br>（5）在客户端A执行更新语句update account set balance = balance - 50 where id =1，lilei的balance没有变成350，居然是400，是不是很奇怪，数据不一致啊，如果你这么想就太天真 了，在应用程序中，我们会用400-50=350，并不知道其他会话回滚了，要想解决这个问题可以采用读已提交的隔离级别</p>
+<p><img src="/images/pasted-70.png" alt="upload successful"></p>
+<h5 id="2-读已提交"><a href="#2-读已提交" class="headerlink" title="2.读已提交"></a>2.读已提交</h5><p>（1）打开一个客户端A，并设置当前事务模式为read committed（读已提交），查询表account的所有记录：<br><img src="/images/pasted-71.png" alt="upload successful"><br>（2）在客户端A的事务提交之前，打开另一个客户端B，更新表account：<br><img src="/images/pasted-72.png" alt="upload successful"><br>（3）这时，客户端B的事务还没提交，客户端A不能查询到B已经更新的数据，解决了脏读问题：<br><img src="/images/pasted-73.png" alt="upload successful"><br>（4）客户端B的事务提交<br><img src="/images/pasted-74.png" alt="upload successful"><br>（5）客户端A执行与上一步相同的查询，结果 与上一步不一致，即产生了不可重复读的问题<br><img src="/images/pasted-75.png" alt="upload successful"></p>
+<h5 id="3-可重复读"><a href="#3-可重复读" class="headerlink" title="3.可重复读"></a>3.可重复读</h5><p>（1）打开一个客户端A，并设置当前事务模式为repeatable read，查询表account的所有记录<br><img src="/images/pasted-76.png" alt="upload successful"><br>（2）在客户端A的事务提交之前，打开另一个客户端B，更新表account并提交<br><img src="/images/pasted-77.png" alt="upload successful"><br>（3）在客户端A查询表account的所有记录，与步骤（1）查询结果一致，没有出现不可重复读的问题<br><img src="/images/pasted-78.png" alt="upload successful"><br>（4）在客户端A，接着执行update balance = balance - 50 where id = 1，balance没有变成400-50=350，lilei的balance值用的是步骤（2）中的350来算的，所以是300，数据的一致性倒是没有被破坏。可重复读的隔离级别下使用了MVCC机制，select操作不会更新版本号，是快照读（历史版本）；insert、update和delete会更新版本号，是当前读（当前版本）<br><img src="/images/pasted-79.png" alt="upload successful"><br>（5）重新打开客户端B，插入一条新数据后提交<br><img src="/images/pasted-80.png" alt="upload successful"><br>（6）在客户端A查询表account的所有记录，没有 查出 新增数据，所以没有出现幻读<br><img src="/images/pasted-81.png" alt="upload successful"></p>
+<h5 id="4-串行化"><a href="#4-串行化" class="headerlink" title="4.串行化"></a>4.串行化</h5><p>（1）打开一个客户端A，并设置当前事务模式为serializable，查询表account的初始值：<br><img src="/images/pasted-83.png" alt="upload successful"><br>（2）打开一个客户端B，并设置当前事务模式为serializable，插入一条记录报错，表被锁了插入失败，mysql中事务隔离级别为serializable时会锁表，因此不会出现幻读的情况，这种隔离级别并发性极低，开发中很少会用到。</p>
+<p><img src="/images/pasted-84.png" alt="upload successful"></p>
+<p>*<em>补充：<br>1、事务隔离级别为读提交时，写数据只会锁住相应的行<br>2、事务隔离级别为可重复读时，如果检索条件有索引（包括主键索引）的时候，默认加锁方式是next-key 锁；如果检索条件没有索引，更新数据时会锁住整张表。一个间隙被事务加了锁，其他事务是不能在这个间隙插入记录的，这样可以防止幻读。<br>3、事务隔离级别为串行化时，读写数据都会锁住整张表<br>4、隔离级别越高，越能保证数据的完整性和一致性，但是对并发性能的影响也越大。<br>5、MYSQL MVCC实现机制参考链接：<a href="https://www.cnblogs.com/moershiwei/p/9766916.html" target="_blank" rel="noopener">https://www.cnblogs.com/moershiwei/p/9766916.html</a><br>6、关于next-key 锁可以参考链接：<a href="https://blog.csdn.net/bigtree_3721/article/details/73731377" target="_blank" rel="noopener">https://blog.csdn.net/bigtree_3721/article/details/73731377</a> *</em></p>
+<h4 id="原文地址：https-www-cnblogs-com-wyaokai-p-10921323-html"><a href="#原文地址：https-www-cnblogs-com-wyaokai-p-10921323-html" class="headerlink" title="原文地址：https://www.cnblogs.com/wyaokai/p/10921323.html"></a>原文地址：<a href="https://www.cnblogs.com/wyaokai/p/10921323.html" target="_blank" rel="noopener">https://www.cnblogs.com/wyaokai/p/10921323.html</a></h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/18/%E9%85%8D%E7%BD%AEDocker%E7%BD%91%E7%BB%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/18/%E9%85%8D%E7%BD%AEDocker%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">配置Docker网络</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-18 15:34:37" itemprop="dateCreated datePublished" datetime="2020-02-18T15:34:37+08:00">2020-02-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-25 17:15:19" itemprop="dateModified" datetime="2021-06-25T17:15:19+08:00">2021-06-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="创建Docker网络"><a href="#创建Docker网络" class="headerlink" title="创建Docker网络"></a>创建Docker网络</h2><p>旧版本的docker容相互之间是依靠link建立关系。<br>新版本的docker推荐创建自有网络，再将需要互联的容器配置到相同的网络中。<br>接下来，我们创建一个名为”docker_net”的网络：  </p>
+<ul>
+<li>子网 172.15.0.0/16  <ul>
+<li>IP段 172.15.0.0  </li>
+<li>掩码 255.255.0.0</li>
+<li>IP范围 172.15.0.1～172.15.255.254</li>
+<li>IP广播 172.15.255.255</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/pasted-61.png" alt="upload successful"></p>
+<p>运行docker镜像，并将docker容器添加到docker_net网络中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --network docker_net --ip 172.15.0.50 -p 80:80 51f345e513a1</span><br></pre></td></tr></table></figure>
+<p>查看docker容器IPAddress</p>
+<p><img src="/images/pasted-62.png" alt="upload successful"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/16/Go%E8%AF%AD%E8%A8%80-fmt%E6%A0%BC%E5%BC%8F-%E2%80%9C%E5%8D%A0%E4%BD%8D%E7%AC%A6%E2%80%9D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/16/Go%E8%AF%AD%E8%A8%80-fmt%E6%A0%BC%E5%BC%8F-%E2%80%9C%E5%8D%A0%E4%BD%8D%E7%AC%A6%E2%80%9D/" class="post-title-link" itemprop="url">Go语言 fmt格式 “占位符”</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-16 16:33:49 / 修改时间：18:03:54" itemprop="dateCreated datePublished" datetime="2020-01-16T16:33:49+08:00">2020-01-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/go/" itemprop="url" rel="index">
+                    <span itemprop="name">go</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>golang的fmt包实现了格式化I/O函数，类似于C的printf和scanf。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#定义示例类型和变量</span><br><span class="line">type Human struct &#123;</span><br><span class="line">	Name string</span><br><span class="line">&#125;</span><br><span class="line">var people &#x3D; Human&#123;Name:&quot;lwl&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>普通占位符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%v</td>
+<td align="center">相应值的默认格式</td>
+<td align="center">fmt.Printf(“%v”,people)</td>
+<td align="center">{lwl}</td>
+</tr>
+<tr>
+<td align="center">%+v</td>
+<td align="center">打印结构体时，会添加字段名</td>
+<td align="center">fmt.Printf(“%+v”,people)</td>
+<td align="center">{Name:lwl}</td>
+</tr>
+<tr>
+<td align="center">%#v</td>
+<td align="center">相应值的Go语法表示</td>
+<td align="center">fmt.Printf(“%#v”,people)</td>
+<td align="center">main.Human{Name:”lwl”}</td>
+</tr>
+<tr>
+<td align="center">%T</td>
+<td align="center">相应值的类型的Go语法表示</td>
+<td align="center">fmt.Pintf(“%T”,people)</td>
+<td align="center">main.Human</td>
+</tr>
+<tr>
+<td align="center">%%</td>
+<td align="center">字面上的百分号，并非值的占位符</td>
+<td align="center">fmt.Printf(“%%”)</td>
+<td align="center">%</td>
+</tr>
+</tbody></table>
+<p><strong>布尔占位符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%t</td>
+<td align="center">true或false</td>
+<td align="center">fmt.Printf(“%t”,true)</td>
+<td align="center">true</td>
+</tr>
+</tbody></table>
+<p><strong>整数占位符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%b</td>
+<td align="center">二进制表示</td>
+<td align="center">fmt.Printf(“%b”,5)</td>
+<td align="center">101</td>
+</tr>
+<tr>
+<td align="center">%c</td>
+<td align="center">相应Unicode码点所表示的字符</td>
+<td align="center">fmt.Printf(“%c”,0x4E2D)</td>
+<td align="center">中</td>
+</tr>
+<tr>
+<td align="center">%d</td>
+<td align="center">十进制表示</td>
+<td align="center">fmt.Printf(“%d”,0x12)</td>
+<td align="center">18</td>
+</tr>
+<tr>
+<td align="center">%o</td>
+<td align="center">八进制表示</td>
+<td align="center">fmt.Printf(“%o”,10)</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td align="center">%q</td>
+<td align="center">单引号围绕的字符字面值，由Go语法安全地转义</td>
+<td align="center">fmt.Printf(“%q”,0x4E2D)</td>
+<td align="center">‘中’</td>
+</tr>
+<tr>
+<td align="center">%x</td>
+<td align="center">十六进制表示，字母形式为小写a-f</td>
+<td align="center">fmt.Printf(“%x”,13)</td>
+<td align="center">d</td>
+</tr>
+<tr>
+<td align="center">%X</td>
+<td align="center">十六进制表示，字母形式为大写A-F</td>
+<td align="center">fmt.Printf(“%X”,13)</td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td align="center">%U</td>
+<td align="center">Unicode格式：U+1234，等同于”U+%04X”</td>
+<td align="center">fmt.Printf(“%U”,0x4E2D)</td>
+<td align="center">U+4E2D</td>
+</tr>
+</tbody></table>
+<p><strong>符点数和复数的组成部分(实部和虚部)</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%b</td>
+<td align="center">无小数部分的，指数为二的幂的科学计数法，与strconv.FormatFloat 的’b’转换格式一致.例如-123456p-78</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">%e</td>
+<td align="center">科学计数法，例如 -1234.456e+78</td>
+<td align="center">fmt.Printf(“%e”,10.2)</td>
+<td align="center">1.020000e+01</td>
+</tr>
+<tr>
+<td align="center">%E</td>
+<td align="center">科学计数法，例如 -1234.456E+78</td>
+<td align="center">fmt.Printf(“%E”,10.2)</td>
+<td align="center">1.020000E+01</td>
+</tr>
+<tr>
+<td align="center">%f</td>
+<td align="center">有小数点而无指数，例如 123.456｜fmt.Printf(“%f”,10.2)</td>
+<td align="center">10.200000</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">%g</td>
+<td align="center">根据情况选择%e 或 %f 以产生更紧凑的(无末尾的0)输出</td>
+<td align="center">fmt.Printf(“%g”,10.20)</td>
+<td align="center">10.2</td>
+</tr>
+<tr>
+<td align="center">%G</td>
+<td align="center">根据情况选择%E 或 %f 以产生更紧凑的(无末尾的0)输出</td>
+<td align="center">fmt.Printf(“%G”,10.20+2i)</td>
+<td align="center">(10.2+2i)</td>
+</tr>
+</tbody></table>
+<p><strong>字符串与字节切片</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%s</td>
+<td align="center">输出字符串表示(string类型或[]byte)</td>
+<td align="center">fmt.Printf(“%s”,[]byte(“Go语言”))</td>
+<td align="center">Go语言</td>
+</tr>
+<tr>
+<td align="center">%q</td>
+<td align="center">双引号围绕的字符串，由Go语法安全地转义</td>
+<td align="center">fmt.Printf(“%q”,”Go语言”)</td>
+<td align="center">“Go语言”</td>
+</tr>
+<tr>
+<td align="center">%x</td>
+<td align="center">十六进制，小写字母，每字节两个字符</td>
+<td align="center">fmt.Printf(“%x”,”golang”)</td>
+<td align="center">676f6c616e67</td>
+</tr>
+<tr>
+<td align="center">%X</td>
+<td align="center">十六进制，大写字母，每字节两个字符</td>
+<td align="center">fmt.Printf(“%X”,”golang”)</td>
+<td align="center">676F6C616E67</td>
+</tr>
+</tbody></table>
+<p><strong>指针</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%p</td>
+<td align="center">十六进制表示，前缀0x</td>
+<td align="center">fmt.Printf(“%p”,&amp;people)</td>
+<td align="center">0xc0000ac000</td>
+</tr>
+</tbody></table>
+<p><strong>其它标记</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">占位符</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">总打印数值的正负号；对于%q(%+q)保证只输出ASCII编码的字符</td>
+<td align="center">fmt.Printf(“%+q”,”中文”)</td>
+<td align="center">“\u4e2d\u6587”</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">在右侧而非左侧填充空格（左对齐该区域）</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">#</td>
+<td align="center">备用格式：为八进制添加前导0(%#0)；为十六进制添加前导0x(%#x)或0X(%#X)，为%p(%#p)去掉前导0x；如果可能的话，%q(%#q)会打印原始（即反引号围绕的）字符串；如果是可打印字符，%U(%#U)会写出该字符的Unicode编码形式（如字符x会被打印成U+0078 ‘x’）</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">‘ ‘</td>
+<td align="center">(空格)为数值中省略的正负号流出空白(% d)；以十六进制(% x,% X)打印字符串或切片时，在字节之间用空格隔开</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">填充前导的0而非空格；对于数字，这会将填充移到正负号之后</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>golang没有 ‘%u’ 点位符，若整数为无符号类型，默认就会被打印成无符号的。</p>
+<p>宽度与精度的控制格式以Unicode码点为单位。宽度为该数值占用区域的最小宽度；精度为小数点之后的位数。<br>操作数的类型为int时，宽度与精度都可用字符 ‘*’ 表示。</p>
+<p>对于 %g/%G 而言，精度为所有数字的总数，例如：123.45，%.4g 会打印123.5，（而 %6.2f 会打印123.45）。</p>
+<p>%e 和 %f 的默认精度为6</p>
+<p>对大多数的数值类型而言，宽度为输出的最小字符数，如果必要的话会为已格式化的形式填充空格。</p>
+<p>而以字符串类型，精度为输出的最大字符数，如果必要的话会直接截断。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/16/Go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/16/Go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Go语言学习笔记--类型篇</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-16 15:16:35" itemprop="dateCreated datePublished" datetime="2020-01-16T15:16:35+08:00">2020-01-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-17 12:04:13" itemprop="dateModified" datetime="2020-01-17T12:04:13+08:00">2020-01-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/go/" itemprop="url" rel="index">
+                    <span itemprop="name">go</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>前言：<br>&emsp;&emsp;学习任何一门语言都需要掌握它都数据类型，就像java语言中包含8种基本数据类型、有变量常量之分，go语言也如此。文档主要记录《GO语言学习笔记》一书都学习笔记、demo，以便后期回顾学习。</p>
+<h5 id="2-类型篇"><a href="#2-类型篇" class="headerlink" title="2.类型篇"></a>2.类型篇</h5><h6 id="2-1变量"><a href="#2-1变量" class="headerlink" title="2.1变量"></a>2.1变量</h6><p>go语言用关键字var定义变量，跟java不同，go语言类型放在变量名后。如果显示提供初始化值，则可以省略变量类型，由编译器推断。同时，可一次定义多个变量，包括用不同初始值定义不同类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var x int 	&#x2F;&#x2F;定义变量，指定类型为int,如果没有初始化值，运行时会自动初始化为二进制零值</span><br><span class="line"></span><br><span class="line">var y &#x3D; false &#x2F;&#x2F;显示提供初始化值false,可以省略变量类型(bool)，由编译器推断</span><br><span class="line"></span><br><span class="line">var a,b int &#x2F;&#x2F;一次定义相同类型都多个变量</span><br><span class="line">var a,s&#x3D;100,&quot;abc&quot; &#x2F;&#x2F;用不同初始值定义不同类型</span><br></pre></td></tr></table></figure>
+<p>除var关键字外，还可以使用更加简短的变量定义和初始化语法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	x :&#x3D; 100</span><br><span class="line">    a,s :&#x3D; 1,&quot;abc&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简短模式定义变量时，需要注意以下限制：  </p>
+<ul>
+<li><strong>定义变量，同时显示初始化</strong></li>
+<li><strong>不能提供数据类型</strong></li>
+<li><strong>只能用在函数内部</strong></li>
+</ul>
+<h6 id="2-2命名"><a href="#2-2命名" class="headerlink" title="2.2命名"></a>2.2命名</h6><p>&emsp;&emsp;同其他编程语言一样，对变量、常量、函数、自定义类型进行命名，通常优先选用有实际含义，易于理解对字母或单词组合。<br><strong>命名建议：</strong></p>
+<ul>
+<li>以字母或下划线开始，由多个字母、数字和下划线组合而成</li>
+<li>区分大小写</li>
+<li>使用驼峰命名格式</li>
+<li>局部变量优先使用短名</li>
+<li>不可以使用go语言保留的关键字</li>
+<li>不建议使用与预定义常量、类型、内置函数相同的名字</li>
+<li>专有名词通常会全部大写，例如HTML</li>
+</ul>
+<p>&emsp;&emsp;go语言没有java语言中的访问修饰符(public、protected、private)，因此采用首字母大小写来决定其作用域。首字母大写的为导出成员，可被包外引用，首字母小写仅能在包内访问。<br><strong>空标识符</strong><br>&emsp;&emsp;和Python类似，Go也有哥名为“_”的特殊成员。通常作为忽略占位符使用，可作为表达式左值，用“_”接收的值，表示舍弃不用，故无法读取其内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &quot;strconv&quot;</span><br><span class="line">   func main()&#123;	&#x2F;&#x2F;go语言main函数不能有任何参数</span><br><span class="line">   	x,_ :&#x3D; strconv.Atoi(&quot;12&quot;)	&#x2F;&#x2F;忽略Atoi的err返回值</span><br><span class="line">       println(x)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="2-3常量"><a href="#2-3常量" class="headerlink" title="2.3常量"></a>2.3常量</h6><p>&emsp;&emsp;同java语言一样，go语言也有常量，常量用来表示运行时恒定不变的值。常量值必须是编译期可确定的字符、字符串、数字或布尔值。可指定常量类型，或由编译器通过初始化值推断。<br>go语言常量值由const修饰：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const x,y int&#x3D;123,0x22	&#x2F;&#x2F;定义两个常量值x,y 其中y为16进制表示</span><br><span class="line">const s &#x3D; &quot;hello,world!&quot; &#x2F;&#x2F;定义常量s并且省略其类型，由编译器通过初始化值推断</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;可在函数代码块中定义常量，不曾使用的常量不会引发编译错误(变量定义未使用，编译器会报错)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	const x &#x3D; 123 </span><br><span class="line">    println(x)</span><br><span class="line">    const y &#x3D; 1.23 &#x2F;&#x2F;未使用，不会引发编译错误</span><br><span class="line">    &#123;</span><br><span class="line">    	const x &#x3D; &quot;abc&quot;	&#x2F;&#x2F;在不同作用域可以定义同名常量，编译器不会报错</span><br><span class="line">        println(x)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;如果显示指定类型，必须确保常量左右值类型一致，需要时可以做显示类型转换。右值不能超出左边类型取值范围，否则报溢出错误。常量值也可以是某些编译器能计算出结果的表达式，如unsafe.Sizeof、len、cap等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &quot;unsafe&quot;</span><br><span class="line">   &#x2F;&#x2F;常量组</span><br><span class="line">   const(</span><br><span class="line">   	ptrSize &#x3D; unsafe.Sizeof(uintptr(0))</span><br><span class="line">       strSize &#x3D; len(&quot;hello,world!&quot;)</span><br><span class="line">   )</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;在常量组中，如果不指定常量的类型和初始化值，则与上一行非空常量右值相同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &quot;fmt&quot;</span><br><span class="line">func main()&#123;</span><br><span class="line">	const(</span><br><span class="line">    	x uint16 &#x3D; 120</span><br><span class="line">        y				&#x2F;&#x2F;y未指定类型和初始化值，与上一行非空常量右值相同，即y&#x3D;120</span><br><span class="line">        s &#x3D; &quot;abc&quot;</span><br><span class="line">        z				&#x2F;&#x2F;与s类型、右值相同</span><br><span class="line">    )</span><br><span class="line">    fmt.Printf(&quot;%T,%v\n&quot;,y,y)	&#x2F;&#x2F;输出类型和值</span><br><span class="line">    fmt.Printf(&quot;%T,%v\n&quot;,z,z)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uint16,120 string,abc</span><br></pre></td></tr></table></figure>
+<p><strong><em>关于占位符的介绍，请参考：</em></strong><a href="https://dreamcodey.github.io/2020/01/16/Go%E8%AF%AD%E8%A8%80-fmt%E6%A0%BC%E5%BC%8F-%E2%80%9C%E5%8D%A0%E4%BD%8D%E7%AC%A6%E2%80%9D/" target="_blank" rel="noopener">Go语言fmt格式“占位符”</a><br><strong>枚举：</strong><br>&emsp;&emsp;Go并没有明确意义上的enum定义，不过可借助<strong>iota</strong>标识符实现一组自增常量值来实现枚举类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	x &#x3D; iota 	&#x2F;&#x2F;0</span><br><span class="line">    y			&#x2F;&#x2F;1</span><br><span class="line">    z			&#x2F;&#x2F;2</span><br><span class="line">)</span><br><span class="line">const(</span><br><span class="line">	_ &#x3D; iota	&#x2F;&#x2F;0</span><br><span class="line">    KB &#x3D; 1&lt;&lt;(10*iota)	&#x2F;&#x2F;1&lt;&lt;(10*1)</span><br><span class="line">    MB					&#x2F;&#x2F;1&lt;&lt;(10*2)</span><br><span class="line">    GB					&#x2F;&#x2F;1&lt;&lt;(10*3)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;自增作用范围为常量组。可在多常量定义中使用多个<strong>iota</strong>，它们各自单独计数，只须确保组中每行常量的列数量相同即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	_,_ &#x3D; iota,iota*10	&#x2F;&#x2F;0,0*10</span><br><span class="line">    a,b					&#x2F;&#x2F;1,1*10</span><br><span class="line">    c,d					&#x2F;&#x2F;2,2*10</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>如中断iota自增，则必须显示恢复。且后续自增值按行序递增，而非C语言 enum那样按上一取值递增。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	a &#x3D; iota	&#x2F;&#x2F;0</span><br><span class="line">    b			&#x2F;&#x2F;1</span><br><span class="line">    c &#x3D; 100		&#x2F;&#x2F;100</span><br><span class="line">    d			&#x2F;&#x2F;100 与上一行常量右值表达式相同</span><br><span class="line">    e &#x3D; iota 	&#x2F;&#x2F;4(恢复iota自增，计数包括c、d)</span><br><span class="line">    f			&#x2F;&#x2F;5</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><strong>自增默认数据类型为int，可显示指定类型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const(</span><br><span class="line">	a &#x3D; iota 	&#x2F;&#x2F;int</span><br><span class="line">    b float32 &#x3D; iota	&#x2F;&#x2F;float32</span><br><span class="line">    c &#x3D; iota	&#x2F;&#x2F;int(如不显示指定iota，则与b数据类型相同)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>常量除“只读”外，和变量究竟有什么不同？  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var x &#x3D; 0x100</span><br><span class="line">const y &#x3D; 0x200</span><br><span class="line">func main()&#123;</span><br><span class="line">	println(&amp;x,x)</span><br><span class="line">    println(&amp;y,y)	&#x2F;&#x2F;编译器报错：cannot take the address of y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;不同于变量在运行期分配存储内存(非优化状态)，常量通常会被编译器在预处理阶段直接展开，作为指令数据使用。数字常量不会分配存储空间，无法像变量那样通过内存寻址来取值，因此无法获取地址。  </p>
+<h6 id="2-4基本类型"><a href="#2-4基本类型" class="headerlink" title="2.4基本类型"></a>2.4基本类型</h6><table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">长度(字节数)</th>
+<th align="center">默认值</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">bool</td>
+<td align="center">1</td>
+<td align="center">false</td>
+<td align="center">布尔型的值只可以是常量<strong>true</strong>或<strong>false</strong>，默认值<strong>false</strong></td>
+</tr>
+<tr>
+<td align="center">byte</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">类似uint8</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">4或8</td>
+<td align="center">0</td>
+<td align="center">默认整数类型，根据目标平台，32位或64位</td>
+</tr>
+<tr>
+<td align="center">uint</td>
+<td align="center">4或8</td>
+<td align="center">0</td>
+<td align="center">默认无符号整数类型，依据目标平台，32位或64位</td>
+</tr>
+<tr>
+<td align="center">int8,uint8</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">int8取值范围-128~127,uint8取值范围0-255</td>
+</tr>
+<tr>
+<td align="center">int16,uint16</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">int16取值范围-32768<del>32767,uint16取值范围0</del>65535</td>
+</tr>
+<tr>
+<td align="center">int32,uint32</td>
+<td align="center">4</td>
+<td align="center">0</td>
+<td align="center">int32取值范围-2147483648<del>2147483647,uint32取值范围0</del>4294967295</td>
+</tr>
+<tr>
+<td align="center">int64,uint64</td>
+<td align="center">8</td>
+<td align="center">0</td>
+<td align="center">int64取值范围-9223372036854775808 ~ 9223372036854775807,uint64取值范围0 ~ 18446744073709551615</td>
+</tr>
+<tr>
+<td align="center">float32</td>
+<td align="center">4</td>
+<td align="center">0.0</td>
+<td align="center">32位浮点数</td>
+</tr>
+<tr>
+<td align="center">float64</td>
+<td align="center">8</td>
+<td align="center">0.0</td>
+<td align="center">64位浮点数(默认浮点数类型)</td>
+</tr>
+<tr>
+<td align="center">complex64</td>
+<td align="center">8</td>
+<td align="center"></td>
+<td align="center">32位实数和虚数</td>
+</tr>
+<tr>
+<td align="center">complex128</td>
+<td align="center">16</td>
+<td align="center"></td>
+<td align="center">64位实数和虚数</td>
+</tr>
+<tr>
+<td align="center">rune</td>
+<td align="center">4</td>
+<td align="center">0</td>
+<td align="center">Unicode Code Point,类似int32</td>
+</tr>
+<tr>
+<td align="center">uintptr</td>
+<td align="center">4,8</td>
+<td align="center">0</td>
+<td align="center">无符号整型，用于存储指针</td>
+</tr>
+<tr>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="center">“”</td>
+<td align="center">字符串，默认值为空字符串而非NULL</td>
+</tr>
+<tr>
+<td align="center">array</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">数组</td>
+</tr>
+<tr>
+<td align="center">struct</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">结构体</td>
+</tr>
+<tr>
+<td align="center">func</td>
+<td align="center"></td>
+<td align="center">nil</td>
+<td align="center">函数类型</td>
+</tr>
+<tr>
+<td align="center">interface</td>
+<td align="center"></td>
+<td align="center">nil</td>
+<td align="center">接口</td>
+</tr>
+<tr>
+<td align="center">map</td>
+<td align="center"></td>
+<td align="center">nil</td>
+<td align="center">字典，引用类型</td>
+</tr>
+<tr>
+<td align="center">slice</td>
+<td align="center"></td>
+<td align="center">nil</td>
+<td align="center">切片，引用类型</td>
+</tr>
+<tr>
+<td align="center">channel</td>
+<td align="center"></td>
+<td align="center">nil</td>
+<td align="center">通道，引用类型</td>
+</tr>
+</tbody></table>
+<p>支持八进制、十六进制以及科学记数法。标准库math定义了各数字类型的取值范围。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import(&quot;fmt&quot; &quot;math&quot;)</span><br><span class="line">func main()&#123;</span><br><span class="line">	a,b,c :&#x3D; 100,0144,0x64		&#x2F;&#x2F;a 十进制 100，b 八进制 100，c 十六进制 100</span><br><span class="line">	fmt.Println(a,b,c)</span><br><span class="line">	fmt.Printf(&quot;0b%b, %#o, %#x\n&quot;,a,a,a)		&#x2F;&#x2F; %b 二进制占位符  %o 八进制表示，%#o 为八进制添加前导0， %x 十六进制表示</span><br><span class="line">	fmt.Println(math.MinInt8,math.MaxInt8)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">100,100,100</span><br><span class="line">0b1100100, 0144, 0x64</span><br><span class="line">-128 127</span><br></pre></td></tr></table></figure>
+<p>标准库strconv可以在不同进制(字符串)间转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a, err :&#x3D; strconv.ParseInt(&quot;1100100&quot;,2,32)</span><br><span class="line">if err !&#x3D; nil&#123;</span><br><span class="line">	println(err.Error())</span><br><span class="line">&#125;</span><br><span class="line">b, _ :&#x3D; strconv.ParseInt(&quot;0144&quot;,8,32)</span><br><span class="line">c, _ :&#x3D; strconv.ParseInt(&quot;64&quot;,16,32)</span><br><span class="line">println(a,b,c)</span><br><span class="line">println(&quot;0b&quot; + strconv.FormatInt(a,2))</span><br><span class="line">println(&quot;0&quot;+strconv.FormatInt(a,8))</span><br><span class="line">println(&quot;0x&quot; + strconv.FormatInt(a,16))</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">100,100,100</span><br><span class="line">0b1100100</span><br><span class="line">0144</span><br><span class="line">0x64</span><br></pre></td></tr></table></figure>
+
+<p><strong>别名：</strong>在官方的语言规范中，专门提到两个别名。byte 是 uint8别名；rune是int32别名。别名类型无须进行类型转换，可直接赋值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">func test(x byte)&#123;</span><br><span class="line">	println(x)</span><br><span class="line">&#125;</span><br><span class="line">func main()&#123;</span><br><span class="line">	var a byte &#x3D; 0x11</span><br><span class="line">    var b uint8 &#x3D; a</span><br><span class="line">    var c uint8 &#x3D; a+b</span><br><span class="line">    test(c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但这并不表示，拥有相同底层结构但就属于别名。就算在64位平台上int和int64结构完全一致，也分属不同类型，须显示转换。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">func add(x,y int) int &#123;</span><br><span class="line">	return x+y</span><br><span class="line">&#125;</span><br><span class="line">func main() &#123;</span><br><span class="line">	var x int &#x3D; 100</span><br><span class="line">    var y int64 &#x3D; x 	&#x2F;&#x2F;编译器报错：cannot use x(type int) as type int64 in assignment</span><br><span class="line">    add(x,y)&#x2F;&#x2F;编译器报错：cannot use y(type int64)as type int in argument to add</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="2-5引用类型"><a href="#2-5引用类型" class="headerlink" title="2.5引用类型"></a>2.5引用类型</h6><p>所谓引用类型(reference type) 特指 slice、map、channel这三种预定义类型。<br>&emsp;&emsp;相比数字、数组等类型，引用类型拥有更复杂但存储结构。除分配内存外，它们还须初始化一系列属性，诸如指针、长度，甚至包括哈希分布、数据队列等。<br>&emsp;&emsp;内置函数new按指定类型长度分配零值内存，返回指针，并不关心类型内部构造和初始化方式。而引用类型则必须使用make函数创建，编译器会将make转换为目标类型专用的创建函数(或指令)，以确保完成全部内存分配和相关属性初始化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;slice</span><br><span class="line">func mkslice() []int &#123;</span><br><span class="line">	s :&#x3D; make([]int,0,10)</span><br><span class="line">	s &#x3D; append(s, 100)</span><br><span class="line">	return s</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;map</span><br><span class="line">func mkmap() map[string]int &#123;</span><br><span class="line">	m :&#x3D; make(map[string]int)</span><br><span class="line">	m[&quot;a&quot;] &#x3D; 1</span><br><span class="line">	return m</span><br><span class="line">&#125;</span><br><span class="line">func main()&#123;</span><br><span class="line">	m :&#x3D; mkmap()</span><br><span class="line">    println(m[&quot;a&quot;])</span><br><span class="line">    s :&#x3D; mkslice()</span><br><span class="line">    println(s[0])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="2-6类型转换"><a href="#2-6类型转换" class="headerlink" title="2.6类型转换"></a>2.6类型转换</h6><ol>
+<li>隐式转换造成的问题远大于它带来的好处。。。<br>&emsp;&emsp;除常量、别名类型以及未命名类型外，Go强制要求使用显示类型转换。加上不支持操作符重载，所以我们总是能确定语句及表达式的明确含义。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a :&#x3D; 10</span><br><span class="line">b :&#x3D; byte(a)</span><br><span class="line">c :&#x3D; a + int(b)	&#x2F;&#x2F;混合类型表达式，必须确保类型一致，也可写成 c :&#x3D; byte(a) + b</span><br></pre></td></tr></table></figure></li>
+<li>同样不能将非bool类型结果当作true/false使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	x :&#x3D; 100</span><br><span class="line">    var b bool &#x3D; x &#x2F;&#x2F;错误：cannot use x(type int)as type bool in assignment</span><br><span class="line">    if x &#123;	&#x2F;&#x2F;错误:non-bool x(type int)used as if condition</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>语法歧义<br>如果转换的目标是指针、单向通道或没有返回值的函数类型，那么必须使用括号，以免造成语法分解错误。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	x :&#x3D; 100</span><br><span class="line">    &#x2F;&#x2F;p :&#x3D; *int(&amp;x) &#x2F;&#x2F;错误:Invalid indirect of &#39;int(&amp;x)&#39; (type &#39;int&#39;) </span><br><span class="line">    			  &#x2F;&#x2F;Cannot convert expression of type *int to type int</span><br><span class="line">    p :&#x3D; (*int)(&amp;x)	&#x2F;&#x2F;转换的目标是指针，必须使用括号</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h6 id="2-7自定义类型"><a href="#2-7自定义类型" class="headerlink" title="2.7自定义类型"></a>2.7自定义类型</h6><p>使用关键字type定义用户自定义类型，包括基于现有基础类型创建，或者是结构体、函数类型等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import (&quot;fmt&quot;)</span><br><span class="line">type flags byte</span><br><span class="line">const(</span><br><span class="line">	read flags &#x3D; 1&lt;&lt;iota</span><br><span class="line">    write</span><br><span class="line">    exec</span><br><span class="line">)</span><br><span class="line">func main()&#123;</span><br><span class="line">	f :&#x3D; read|exec &#x2F;&#x2F;位运算 “或”</span><br><span class="line">    fmt.Printf(&quot;%was b\n&quot;,f)	&#x2F;&#x2F;输出二进制标记位</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">101</span><br></pre></td></tr></table></figure>
+<p>和var、const类似，多个type定义可合并成组，可在函数或代码块内定义局部类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	type(&#x2F;&#x2F;定义组</span><br><span class="line">    		user struct&#123;&#x2F;&#x2F;结构体</span><br><span class="line">            	name string</span><br><span class="line">                age uint8</span><br><span class="line">            &#125;</span><br><span class="line">            event func(string) bool	&#x2F;&#x2F;函数类型</span><br><span class="line">    )</span><br><span class="line">    u :&#x3D; user&#123;&quot;Tom&quot;,20&#125;</span><br><span class="line">    fmt.Println(u)</span><br><span class="line">    var f event &#x3D; func(s string) bool&#123;</span><br><span class="line">    	println(s)</span><br><span class="line">        return s !&#x3D; &quot;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    f(&quot;abc&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>未命名类型</strong><br>&emsp;&emsp;与有明确标识符等bool、int、string等类型相比，数组、切片、字典、通道等类型与具体元素类型或长度等属性相关，故称作未命名类型(unnamed type)。当然，可用type为其提供具体名称，将其改变为命名类型(named type)。<br>具有相同声明等未命名类型被视为同一类型。</p>
+<ul>
+<li>具有相同基类型的指针</li>
+<li>具有相同元素类型和长度的数组(array)</li>
+<li>具有相同元素类型的切片(slice)</li>
+<li>具有相同健值类型的字典(map)</li>
+<li>具有相同数据类型及操作方向的通道（channel）</li>
+<li>具有相同字段序列（字段名、字段类型、标签，以及字段顺序）的结构体（struct）</li>
+<li>具有相同签名（参数和返回值列表，不包括参数名）的函数（func）</li>
+<li>具有相同方法集（方法名、方法签名，不包括顺序）的接口（interface）</li>
+</ul>
+<p>容易被忽视的是struct tag,它也属于类型组成部分，而不仅仅是元数据描述。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">func main()&#123;</span><br><span class="line">	var a struct&#123;&#x2F;&#x2F;匿名结构类型</span><br><span class="line">    	x int &#96;x&#96;</span><br><span class="line">        s string &#96;s&#96;</span><br><span class="line">    &#125;</span><br><span class="line">    var b struct&#123;</span><br><span class="line">    	x int</span><br><span class="line">        s string</span><br><span class="line">    &#125;</span><br><span class="line">    b &#x3D; a &#x2F;&#x2F;错误：cannot use a type struct&#123;x int &quot;x&quot;;s string &quot;s&quot;&#125; as type struct&#123;x int;s string&#125;in assignment</span><br><span class="line">    </span><br><span class="line">    fmt.Println(b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/15/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD%E7%9A%84%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E3%80%81%E8%A1%A5%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/15/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD%E7%9A%84%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E3%80%81%E8%A1%A5%E7%A0%81/" class="post-title-link" itemprop="url">二进制中的原码、反码、补码</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-15 10:59:59" itemprop="dateCreated datePublished" datetime="2020-01-15T10:59:59+08:00">2020-01-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-19 13:28:47" itemprop="dateModified" datetime="2021-04-19T13:28:47+08:00">2021-04-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>说明：计算机中的最小存储单位为位(bit)，一个字节(byte)占8位。<br>原码、反码、补码是计算机中对数字对二进制表示方法。</p>
+<p><strong>原码：</strong> 最高位作为符号位（0表示正数，1表示负数），非符号位为该数字绝对值对二进制表示。<br>如：<br>127的原码为 [0111 1111]<br>-127的原码为 [1111 1111]<br><strong>反码：</strong> <em>正数反码与原码一致</em>；负数，符号位不变，其余各位取反，则得到这个数字都反码表示形式。<br>如：<br>127的反码为[0111 1111]<br>-127的反码为[1000 0000]<br><strong>补码：</strong> <em>正数的补码与原码一致</em>；<strong><em>负数的补码</em></strong>是该数的<strong>反码加1</strong><br>如：<br>127的补码为[0111 1111]<br>-127的补码为[1000 0001]  </p>
+<p><strong>移码:</strong> <em>移码是在补码的基础上,符号位取反</em><br>如:<br>127的移码为[1111 1111]<br>-127的移码为[0000 0001]</p>
+<p>详情见下表：</p>
+<table>
+<thead>
+<tr>
+<th>数值</th>
+<th align="center">原码</th>
+<th align="center">反码</th>
+<th align="center">补码</th>
+<th align="center">移码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>127</td>
+<td align="center">0111 1111</td>
+<td align="center">0111 1111</td>
+<td align="center">0111 1111</td>
+<td align="center">1111 1111</td>
+</tr>
+<tr>
+<td>-127</td>
+<td align="center">1111 1111</td>
+<td align="center">1000 0000</td>
+<td align="center">1000 0001</td>
+<td align="center">0000 0001</td>
+</tr>
+</tbody></table>
+<p><strong>补充</strong>  </p>
+<ol>
+<li>计算机中的运算均是基于补码的。</li>
+<li>java中四个整数类型均采用二进制的补码表示</li>
+</ol>
+<p><strong>接下来以byte说明，为什么采用二进制补码表示数值范围。</strong><br>&emsp;&emsp;byte占8个bit位，如果采用原码表示正整数(含0)，范围为0-255，即2^8=256，一共256种状态，从全0到全1的各种排序组合。如果要表示负数，则符号位要占用一位(最高位 0表示正数，1表示负数)，因此其绝对值最大范围为0-127，即2^7=128，一共正负各128种状态，即 -127到-0和0到127，这样总体上一个字节只有255种状态，因为0具有正0负0之分，显然浪费来一个编码。因此人们想到了另一种编码把负0利用起来，即当遇到负数时，采用补码来表示就可以解决这个问题，而遇到正数或0时还是用原码表示。因此这个负0通过补码算法处理后用来表示-128，这样一个字节的数值范围为-128-127，为256种状态。</p>
+<p><img src="/images/pasted-60.png" alt="upload successful"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/01/Git-Fork-%E5%90%8E%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E4%B8%8E%E8%BF%9C%E7%AB%AF%E5%90%8C%E6%AD%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/01/Git-Fork-%E5%90%8E%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E4%B8%8E%E8%BF%9C%E7%AB%AF%E5%90%8C%E6%AD%A5/" class="post-title-link" itemprop="url">Git Fork 后本地代码如何保持与远端同步</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-01 20:34:15" itemprop="dateCreated datePublished" datetime="2019-07-01T20:34:15+08:00">2019-07-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-25 18:32:27" itemprop="dateModified" datetime="2019-12-25T18:32:27+08:00">2019-12-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="Github-Fork-过程概述"><a href="#Github-Fork-过程概述" class="headerlink" title="Github Fork 过程概述"></a>Github Fork 过程概述</h4><p>在Github上有很多优秀的开源项目，相信每一位热衷于技术的朋友都会在Github上Fork一些感兴趣的项目,然后在本地修改并提交。但是自己修改的同时，如何保证本地代码跟在Github上的源项目同步更新呢。本文就以其中一种方案讲解Github Fork项目后如何更新。</p>
+<p>** 1.新注册一个github账户 a，并新建HelloWorld 公共仓库 **   </p>
+<p><img src="/images/pasted-52.png" alt="upload successful"><br>** 2.登录另一个账户 b，并fork HelloWorld 仓库 **  </p>
+<p><img src="/images/pasted-53.png" alt="upload successful"><br>** 3.将b账户中的HelloWorld仓库git clone 到本地**</p>
+<p><img src="/images/pasted-54.png" alt="upload successful"><br>** 4.查看关联的所有的远程仓库名称及地址 git remote -v **</p>
+<p><img src="/images/pasted-55.png" alt="upload successful"><br>我们看到只有我们自己的远程仓库，此时需要增加源分支地址到项目远程分支列表中。</p>
+<p>** 5.增加源分支地址到项目远程分支列表中(此处是关键)，先得将原来的仓库指定为upstream(名称可以随意指定)，命令为：<br>git remote add upstream <a href="https://github.com/被fork的仓库.git" target="_blank" rel="noopener">https://github.com/被fork的仓库.git</a>**</p>
+<p><img src="/images/pasted-56.png" alt="upload successful"><br>** 6.在源项目代码更新后，利用fetch和merge合并upstream的master分支**</p>
+<p><img src="/images/pasted-57.png" alt="upload successful"><br>** 7.打开本地项目的README.md文件发现文件已经更新为源项目最新文件**</p>
+<p><img src="/images/pasted-58.png" alt="upload successful"><br>** 8.将更新内容推送到我们自己的远程仓库**</p>
+<p><img src="/images/pasted-59.png" alt="upload successful"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mjie."
+      src="/images/%E7%B4%A2%E9%9A%86.jpg">
+  <p class="site-author-name" itemprop="name">Mjie.</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mjie.</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v6.3.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.....Gemini</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

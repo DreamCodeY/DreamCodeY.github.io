@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="第一个：http:&#x2F;&#x2F;www.iteye.com（www.iteye.com）不解释。 第二个：http:&#x2F;&#x2F;www.infoq.com&#x2F;cn&#x2F;（英文主站：www.infoq.com）非常著名的架构师站点，主要面向企业架构，做JaveEE方向的同学应该经常看。 第三个：http:&#x2F;&#x2F;www.ibm.com&#x2F;developerworks&#x2F;cn&#x2F;，IBM developerWorks CNIBM的网站">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用博客">
+<meta property="og:url" content="http://yoursite.com/2021/08/03/%E5%B8%B8%E7%94%A8%E5%8D%9A%E5%AE%A2-1/index.html">
+<meta property="og:site_name" content="Mjie&#39;s Blog">
+<meta property="og:description" content="第一个：http:&#x2F;&#x2F;www.iteye.com（www.iteye.com）不解释。 第二个：http:&#x2F;&#x2F;www.infoq.com&#x2F;cn&#x2F;（英文主站：www.infoq.com）非常著名的架构师站点，主要面向企业架构，做JaveEE方向的同学应该经常看。 第三个：http:&#x2F;&#x2F;www.ibm.com&#x2F;developerworks&#x2F;cn&#x2F;，IBM developerWorks CNIBM的网站">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-03T07:40:30.000Z">
+<meta property="article:modified_time" content="2021-08-03T07:44:18.386Z">
+<meta property="article:author" content="Mjie.">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2021/08/03/%E5%B8%B8%E7%94%A8%E5%8D%9A%E5%AE%A2-1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>常用博客 | Mjie's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mjie's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/08/03/%E5%B8%B8%E7%94%A8%E5%8D%9A%E5%AE%A2-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E7%B4%A2%E9%9A%86.jpg">
+      <meta itemprop="name" content="Mjie.">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mjie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          常用博客
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-03 15:40:30 / 修改时间：15:44:18" itemprop="dateCreated datePublished" datetime="2021-08-03T15:40:30+08:00">2021-08-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>第一个：<a href="http://www.iteye.com（www.iteye.com）" target="_blank" rel="noopener">http://www.iteye.com（www.iteye.com）</a><br>不解释。</p>
+<p>第二个：<a href="http://www.infoq.com/cn/（英文主站：www.infoq.com）" target="_blank" rel="noopener">http://www.infoq.com/cn/（英文主站：www.infoq.com）</a><br>非常著名的架构师站点，主要面向企业架构，做JaveEE方向的同学应该经常看。</p>
+<p>第三个：<a href="http://www.ibm.com/developerworks/cn/，IBM" target="_blank" rel="noopener">http://www.ibm.com/developerworks/cn/，IBM</a> developerWorks CN<br>IBM的网站，文章范围很广，但主要也是偏向Java方向。另，这个站的稿费还算比较可观，200元/千字，想赚点辛苦费的同学可以考虑一下，就是周期太长（登稿大概要3个多月，发放稿费能拖到一年之后，鄙视）</p>
+<p>第四个：<a href="http://www.oschina.net/，开源中国" target="_blank" rel="noopener">http://www.oschina.net/，开源中国</a><br>关注最新的开源进展。社区比较杂，比JE还乱，但招聘区比JE好不少，比较多猎头活跃。</p>
+<p>第五个：<a href="http://www.blogjava.net/，BlogJava" target="_blank" rel="noopener">http://www.blogjava.net/，BlogJava</a><br>这个开始有点凑数的嫌疑了，其实去的并不多。BlogJava远不如博客园主站热闹啊。</p>
+<p>第六个：蓝色理想论坛的JS版<br>做JS、UI/UE的人估计都知道，它人气也许比不上51js，但肯定无愧于它的论坛的标题“经典论坛”。这个也是我去得历史最久的站，不过在这里混了超过11年都没混出个靠谱的JS水平，我确实是有够菜的= =#</p>
+<p>至于神马“床上等你”、“51cto”、“itpub”、“赛迪网”之类的，倒是非常出名，但是我自己基本不去就不推了。下面是一些并非众人皆知，但是个人觉得优秀、值得推荐的网站，大多是博客：</p>
+<p>第一个：<a href="http://coolshell.cn/，酷壳。" target="_blank" rel="noopener">http://coolshell.cn/，酷壳。</a><br>我当作娱乐站点来看，博主的观点我并不全部同意，但博主的文风我确实很佩服，实在太欢乐了。很多非常有趣好玩的文章，譬如这个。</p>
+<p>第二个：<a href="http://rednaxelafx.iteye.com/" target="_blank" rel="noopener">http://rednaxelafx.iteye.com/</a><br>在JE撒迦算是名人了，无需他人为其卖广告，但其博客确实值得关注。另，推一下他创建的HLLVM圈。</p>
+<p>第三个：ZOJ / POJ<br>大学时留下来的恶趣味，不适合大众，工作多年，我自己去得越来越少了……人老了真的会忘掉激情么</p>
+<p>第五个：<a href="http://www.open-open.com" target="_blank" rel="noopener">http://www.open-open.com</a><br>这个是后面编辑、补充的，站长是JE的同学（见本帖第一页最后一楼），应当支持一下。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/04/JVM%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/" rel="prev" title="JVM知识回顾">
+      <i class="fa fa-chevron-left"></i> JVM知识回顾
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/07/26/B-Tree%E3%80%81B-Tree/" rel="next" title="B-Tree、B+Tree">
+      B-Tree、B+Tree <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mjie."
+      src="/images/%E7%B4%A2%E9%9A%86.jpg">
+  <p class="site-author-name" itemprop="name">Mjie.</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mjie.</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v6.3.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.....Gemini</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
