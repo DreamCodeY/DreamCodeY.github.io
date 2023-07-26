@@ -46,12 +46,12 @@
   };
 </script>
 
-  <meta name="description" content="创建Docker网络旧版本的docker容相互之间是依靠link建立关系。新版本的docker推荐创建自有网络，再将需要互联的容器配置到相同的网络中。接下来，我们创建一个名为”docker_net”的网络：    子网 172.15.0.0&#x2F;16   IP段 172.15.0.0   掩码 255.255.0.0 IP范围 172.15.0.1～172.15.255.254 IP广播 172.15">
+  <meta name="description" content="创建Docker网络旧版本的docker容相互之间是依靠link建立关系。新版本的docker推荐创建自有网络，再将需要互联的容器配置到相同的网络中。接下来，我们创建一个名为”docker_net”的网络：    子网 172.15.0.0&#x2F;16   IP段 172.15.0.0   掩码 255.255.0.0 IP范围 172.15.0.1～172.15.255.254 IP广播 1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="配置Docker网络">
 <meta property="og:url" content="http://yoursite.com/2020/02/18/%E9%85%8D%E7%BD%AEDocker%E7%BD%91%E7%BB%9C/index.html">
 <meta property="og:site_name" content="Mjie&#39;s Blog">
-<meta property="og:description" content="创建Docker网络旧版本的docker容相互之间是依靠link建立关系。新版本的docker推荐创建自有网络，再将需要互联的容器配置到相同的网络中。接下来，我们创建一个名为”docker_net”的网络：    子网 172.15.0.0&#x2F;16   IP段 172.15.0.0   掩码 255.255.0.0 IP范围 172.15.0.1～172.15.255.254 IP广播 172.15">
+<meta property="og:description" content="创建Docker网络旧版本的docker容相互之间是依靠link建立关系。新版本的docker推荐创建自有网络，再将需要互联的容器配置到相同的网络中。接下来，我们创建一个名为”docker_net”的网络：    子网 172.15.0.0&#x2F;16   IP段 172.15.0.0   掩码 255.255.0.0 IP范围 172.15.0.1～172.15.255.254 IP广播 1">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/pasted-61.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-62.png">
@@ -223,7 +223,7 @@
       
         <h2 id="创建Docker网络"><a href="#创建Docker网络" class="headerlink" title="创建Docker网络"></a>创建Docker网络</h2><p>旧版本的docker容相互之间是依靠link建立关系。<br>新版本的docker推荐创建自有网络，再将需要互联的容器配置到相同的网络中。<br>接下来，我们创建一个名为”docker_net”的网络：  </p>
 <ul>
-<li>子网 172.15.0.0/16  <ul>
+<li>子网 172.15.0.0&#x2F;16  <ul>
 <li>IP段 172.15.0.0  </li>
 <li>掩码 255.255.0.0</li>
 <li>IP范围 172.15.0.1～172.15.255.254</li>
@@ -233,7 +233,7 @@
 </ul>
 <p><img src="/images/pasted-61.png" alt="upload successful"></p>
 <p>运行docker镜像，并将docker容器添加到docker_net网络中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --network docker_net --ip 172.15.0.50 -p 80:80 51f345e513a1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --network docker_net --ip 172.15.0.50 -p 80:80 51f345e513a1</span><br></pre></td></tr></table></figure>
 <p>查看docker容器IPAddress</p>
 <p><img src="/images/pasted-62.png" alt="upload successful"></p>
 

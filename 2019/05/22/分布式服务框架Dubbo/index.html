@@ -237,7 +237,7 @@
 <li>第七层：protocol层，远程调用层，封装rpc调用</li>
 <li>第八层：exchange层，信息交换层，封装请求响应模式，同步转异步</li>
 <li>第九层：transport层，网络传输层，抽象mina和netty为统一接口</li>
-<li>第十层：serialize层，数据序列化层，可复用的一些工具，扩展接口为Serialization、 ObjectInput、ObjectOutput和ThreadPool   </li>
+<li>第十层：serialize层，数据序列化层，可复用的一些工具，扩展接口为Serialization、 ObjectInput、ObjectOutput和ThreadPool</li>
 </ul>
 <p>上述各层之间的关系官方解释如下：</p>
 <ul>
@@ -247,7 +247,7 @@
 <li>而Remoting实现是Dubbo协议的实现，如果你选择RMI协议，整个Remoting都不会用上，Remoting内部再划为Transport传输层和Exchange信息交换层，Transport层只负责单向消息传输，是对Mina、Netty、Grizzly的抽象，它也可以扩展UDP传输，而Exchange层是在传输层之上封装了Request-Response语义。</li>
 <li>Registry和Monitor实际上不算一层，而是一个独立的节点，只是为了全局概览，用层的方式画在一起。</li>
 </ul>
-<p>Dubbo作为一个分布式服务框架，主要具有如下几个核心的要点：<br><strong>服务定义</strong><br>&emsp;&emsp;服务是围绕服务提供方和服务消费方的，服务提供方实现服务，而服务消费方调用服务<br><strong>服务注册</strong><br>&emsp;&emsp;服务提供方需要发布服务，而且由于应用系统的复杂性，服务的数量、类型也不断膨胀；对于服务消费方，它最关心如何获取它所需要的服务，而面对复杂的应用系统，需要管理大量的服务调用。而且，对于服务提供方和服务消费方来说，它们还有可能兼具这两种角色，即既需要提供服务，又需要消费服务。<br>&emsp;&emsp;通过将服务统一管理起来，可以有效的优化内部应用对服务发布/使用的流程和管理。服务注册中心可以通过特定协议来完成服务对外的统一。Dubbo提供的注册中心有如下几种类型可供选择：</p>
+<p>Dubbo作为一个分布式服务框架，主要具有如下几个核心的要点：<br><strong>服务定义</strong><br>&emsp;&emsp;服务是围绕服务提供方和服务消费方的，服务提供方实现服务，而服务消费方调用服务<br><strong>服务注册</strong><br>&emsp;&emsp;服务提供方需要发布服务，而且由于应用系统的复杂性，服务的数量、类型也不断膨胀；对于服务消费方，它最关心如何获取它所需要的服务，而面对复杂的应用系统，需要管理大量的服务调用。而且，对于服务提供方和服务消费方来说，它们还有可能兼具这两种角色，即既需要提供服务，又需要消费服务。<br>&emsp;&emsp;通过将服务统一管理起来，可以有效的优化内部应用对服务发布&#x2F;使用的流程和管理。服务注册中心可以通过特定协议来完成服务对外的统一。Dubbo提供的注册中心有如下几种类型可供选择：</p>
 <ul>
 <li>Multicast注册中心</li>
 <li>Zookeeper注册中心</li>
@@ -262,10 +262,10 @@
 <li>Grizzly</li>
 </ul>
 <p><strong>服务调用</strong><br>　　下面从Dubbo官网直接拿来，看一下基于RPC层，服务提供方和服务消费方之间的调用关系，如图所示：</p>
-<p><img src="/images/pasted-43.png" alt="upload successful"><br>　　上图中，蓝色的表示与业务有交互，绿色的表示支队Dubbo内部交互。上图所描述的调用流程如下：<br>1.服务提供方发布服务到服务注册中心；<br>2.服务消费方从服务注册中心订阅服务；<br>3.服务消费方调用已经注册的可用服务；<br>4.节点角色说明：<br>Provider：暴露服务的服务提供方。<br>Consumer：调用远程服务的消费方。<br>Registry：服务注册中心。<br>Monitor： 监控中心(统计服务的调用次数和调用时间的)。<br>Container：服务运行容器。<br>5.调用关系说明：<br>①.服务容器负责启动，加载，运行服务提供者/消费者。<br>②.服务提供者在启动时，向注册中心注册自己提供的服务。<br>③.服务消费者在启动时，向注册中心订阅自己所需的服务。<br>④.注册中心返回服务提供者地址列表给消费者，如果有变更，注册中心将基于长连接推送变更数据给消费者。<br>⑤.服务消费者，从提供者地址列表中，基于软负载均衡算法，选一台提供者进行调用，如果调用失败，再选另一台调用。<br>⑥.服务消费者和提供者，在内存中累计调用次数和调用时间，定时每分钟发送一次统计数据到监控中心。<br>接着，将上面抽象的调用流程图展开，详细如图所示：</p>
+<p><img src="/images/pasted-43.png" alt="upload successful"><br>　　上图中，蓝色的表示与业务有交互，绿色的表示支队Dubbo内部交互。上图所描述的调用流程如下：<br>1.服务提供方发布服务到服务注册中心；<br>2.服务消费方从服务注册中心订阅服务；<br>3.服务消费方调用已经注册的可用服务；<br>4.节点角色说明：<br>Provider：暴露服务的服务提供方。<br>Consumer：调用远程服务的消费方。<br>Registry：服务注册中心。<br>Monitor： 监控中心(统计服务的调用次数和调用时间的)。<br>Container：服务运行容器。<br>5.调用关系说明：<br>①.服务容器负责启动，加载，运行服务提供者&#x2F;消费者。<br>②.服务提供者在启动时，向注册中心注册自己提供的服务。<br>③.服务消费者在启动时，向注册中心订阅自己所需的服务。<br>④.注册中心返回服务提供者地址列表给消费者，如果有变更，注册中心将基于长连接推送变更数据给消费者。<br>⑤.服务消费者，从提供者地址列表中，基于软负载均衡算法，选一台提供者进行调用，如果调用失败，再选另一台调用。<br>⑥.服务消费者和提供者，在内存中累计调用次数和调用时间，定时每分钟发送一次统计数据到监控中心。<br>接着，将上面抽象的调用流程图展开，详细如图所示：</p>
 <p><img src="/images/pasted-44.png" alt="upload successful"></p>
-<p><strong>注册/注销服务</strong><br>　　服务的注册与注销，是对服务提供方角色而言，那么注册服务与注销服务的时序图，如图所示：</p>
-<p><img src="/images/pasted-45.png" alt="upload successful"><br><strong>服务订阅/取消</strong><br>　　为了满足应用系统的需求，服务消费方的可能需要从服务注册中心订阅指定的有服务提供方发布的服务，在得到通知可以使用服务时，就可以直接调用服务。反过来，如果不需要某一个服务了，可以取消该服务。下面看一下对应的时序图，如图所示：<br><img src="/images/pasted-47.png" alt="upload successful"><br><strong>协议支持</strong><br>Dubbo支持多种协议，如下所示：  </p>
+<p><strong>注册&#x2F;注销服务</strong><br>　　服务的注册与注销，是对服务提供方角色而言，那么注册服务与注销服务的时序图，如图所示：</p>
+<p><img src="/images/pasted-45.png" alt="upload successful"><br><strong>服务订阅&#x2F;取消</strong><br>　　为了满足应用系统的需求，服务消费方的可能需要从服务注册中心订阅指定的有服务提供方发布的服务，在得到通知可以使用服务时，就可以直接调用服务。反过来，如果不需要某一个服务了，可以取消该服务。下面看一下对应的时序图，如图所示：<br><img src="/images/pasted-47.png" alt="upload successful"><br><strong>协议支持</strong><br>Dubbo支持多种协议，如下所示：  </p>
 <ul>
 <li>Dubbo协议</li>
 <li>Hessian协议</li>
@@ -286,7 +286,7 @@
 <li>dubbo-registry 注册中心模块，基于注册中心下发地址的集群方式，以及对各种注册中心的抽象。</li>
 <li>dubbo-monitor 监控模块，统计服务调用次数，调用时间的，调用链跟踪的服务。</li>
 <li>dubbo-config 配置模块，是Dubbo对外的API，用户通过Config使用Dubbo，隐藏Dubbo所有细节。</li>
-<li>dubbo-container 容器模块，是一个Standalone的容器，以简单的Main加载Spring启动，因为服务通常不需要Tomcat/JBoss等Web容器的特性，没必要用Web容器去加载服务。 </li>
+<li>dubbo-container 容器模块，是一个Standalone的容器，以简单的Main加载Spring启动，因为服务通常不需要Tomcat&#x2F;JBoss等Web容器的特性，没必要用Web容器去加载服务。</li>
 </ul>
 
     </div>

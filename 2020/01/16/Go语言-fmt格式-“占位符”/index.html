@@ -223,8 +223,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>golang的fmt包实现了格式化I/O函数，类似于C的printf和scanf。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#定义示例类型和变量</span><br><span class="line">type Human struct &#123;</span><br><span class="line">	Name string</span><br><span class="line">&#125;</span><br><span class="line">var people &#x3D; Human&#123;Name:&quot;lwl&quot;&#125;</span><br></pre></td></tr></table></figure>
+        <p>golang的fmt包实现了格式化I&#x2F;O函数，类似于C的printf和scanf。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#定义示例类型和变量</span><br><span class="line">type Human struct &#123;</span><br><span class="line">	Name string</span><br><span class="line">&#125;</span><br><span class="line">var people = Human&#123;Name:&quot;lwl&quot;&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>普通占位符</strong></p>
 <table>
 <thead>
@@ -484,7 +484,7 @@
 </tbody></table>
 <p>golang没有 ‘%u’ 点位符，若整数为无符号类型，默认就会被打印成无符号的。</p>
 <p>宽度与精度的控制格式以Unicode码点为单位。宽度为该数值占用区域的最小宽度；精度为小数点之后的位数。<br>操作数的类型为int时，宽度与精度都可用字符 ‘*’ 表示。</p>
-<p>对于 %g/%G 而言，精度为所有数字的总数，例如：123.45，%.4g 会打印123.5，（而 %6.2f 会打印123.45）。</p>
+<p>对于 %g&#x2F;%G 而言，精度为所有数字的总数，例如：123.45，%.4g 会打印123.5，（而 %6.2f 会打印123.45）。</p>
 <p>%e 和 %f 的默认精度为6</p>
 <p>对大多数的数值类型而言，宽度为输出的最小字符数，如果必要的话会为已格式化的形式填充空格。</p>
 <p>而以字符串类型，精度为输出的最大字符数，如果必要的话会直接截断。</p>

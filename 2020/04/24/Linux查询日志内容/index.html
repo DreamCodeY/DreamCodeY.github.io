@@ -225,13 +225,13 @@
 <p>5.查询日志文件除了最后10行的其他所有日志<br>head -n -10 app.log</p>
 <p>6.查询日志中含有某个关键字的信息,显示出行号(在1的基础上修改)<br>cat -n app.log |grep ‘error’</p>
 <p>7.显示92行,后20行的日志 即 92-102<br>cat -n app.log |tail -n +92|head -n 20</p>
-<p>8.根据日期时间段查询(前提日志总必须打印日期,先通过grep确定是否有该时间点)<br>sed -n ‘/2018-06-01 16:00:20/,/2018-06-01 16:06:36/p’ app.log</p>
+<p>8.根据日期时间段查询(前提日志总必须打印日期,先通过grep确定是否有该时间点)<br>sed -n ‘&#x2F;2018-06-01 16:00:20&#x2F;,&#x2F;2018-06-01 16:06:36&#x2F;p’ app.log</p>
 <p>9.使用more和less命令(分页查看,使用空格翻页)<br>cat -n app.log |grep “error” |more</p>
 <p>10.吧日志保存到文件<br>cat -n app.log |grep “error” &gt; temp.txt</p>
-<p>11.将指定时间的日志导入到文件中<br>cat -n logs/catalina.out ‘/2018-06-08 00:00:20/,/2018-06-06 16:06:36/p’ &gt; pay.out</p>
+<p>11.将指定时间的日志导入到文件中<br>cat -n logs&#x2F;catalina.out ‘&#x2F;2018-06-08 00:00:20&#x2F;,&#x2F;2018-06-06 16:06:36&#x2F;p’ &gt; pay.out</p>
 <p>12.显示1000行到3000行之间到内容</p>
 <p>cat -n app.log | head -n 3000 | tail -n +3000</p>
-<p>原文地址：<a href="https://www.cnblogs.com/tygtyg/p/10448631.html" target="_blank" rel="noopener">https://www.cnblogs.com/tygtyg/p/10448631.html</a></p>
+<p>原文地址：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/tygtyg/p/10448631.html">https://www.cnblogs.com/tygtyg/p/10448631.html</a></p>
 
     </div>
 

@@ -221,13 +221,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p> 可能mysql安装的方式大同小异。我是以rpm方式安装的mysql5.7。对于中文来说，数据库编码一直是个问题（心里一万个**跑过，谁叫mysql是外国人折腾出来），在Linux下设置编码全部永久为utf-8方法如下：（这里不说命令设置，命令行设置是临时的）<br> 在没改配置前，进入mysql运行  show variables like ‘character_set_%’;   来查看当前mysql的字符编码。</p>
-<p><img src="/images/pasted-1.png" alt="upload successful"><br>1.mysql配置文件一般默认为 /etc/my.cnf .（如果你找不到在哪儿，用  find / -iname ‘*.cnf’ -print  来找配置文件），找到配置文件之后。<br>         修改用 vim /etc/my.cnf  。友情提示用root账号修改。</p>
-<pre><code>在[client]下添加（注意：我在进入/etc/my.cnf 里面没有这一项，没有就不加，就只在[mysqld]下加对应的。）
-default-charater-set=utf8
-在[mysqld]下添加
-collation_server = utf8_general_ci
-character_set_server = utf8  </code></pre><p>保存退出后重启mysqld。service mysqld restart   然后登陆mysql看修改的效果  </p>
+        <p> 可能mysql安装的方式大同小异。我是以rpm方式安装的mysql5.7。对于中文来说，数据库编码一直是个问题（心里一万个**跑过，谁叫mysql是外国人折腾出来），在Linux下设置编码全部永久为utf-8方法如下：（这里不说命令设置，命令行设置是临时的）<br> 在没改配置前，进入mysql运行  show variables like ‘character_set_%’;   来查看当前mysql的字符编码。</p>
+<p><img src="/images/pasted-1.png" alt="upload successful"><br>1.mysql配置文件一般默认为 &#x2F;etc&#x2F;my.cnf .（如果你找不到在哪儿，用  find &#x2F; -iname ‘*.cnf’ -print  来找配置文件），找到配置文件之后。<br>         修改用 vim &#x2F;etc&#x2F;my.cnf  。友情提示用root账号修改。</p>
+<p>         在[client]下添加（注意：我在进入&#x2F;etc&#x2F;my.cnf 里面没有这一项，没有就不加，就只在[mysqld]下加对应的。）<br>         default-charater-set&#x3D;utf8<br>         在[mysqld]下添加<br>         collation_server &#x3D; utf8_general_ci<br>         character_set_server &#x3D; utf8<br>保存退出后重启mysqld。service mysqld restart   然后登陆mysql看修改的效果  </p>
 <p><img src="/images/pasted-2.png" alt="upload successful"></p>
 
     </div>

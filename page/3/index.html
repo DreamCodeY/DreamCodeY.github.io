@@ -298,8 +298,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>在Linux下用vi编辑器编写JAVA代码，开始时可能相当别扭，当你用熟了后，发现vi编辑器原来十分好用，并且再也不需要鼠标了！！！<br>经过差不多一星期的摸索，下面就来总结一下我用vi编辑器的常用快捷键（以及Linux下的快捷键及编译JAVA的常用命令）：<br>一、vi编辑器分为三中模式：<br>命令模式，末行模式，输入模式<br><strong>命令模式下：</strong><br>1）h , j , k , l为左 ， 下 ， 上 ， 右（移动光标，用起来不怎么习惯，还是常用方向键⊙﹏⊙b）<br>2）u: 撤销上一步操作；　Ctrl +　r:　恢复上一步操作（相当常用）<br>3）yy: 复制一行； 数字＋yy:　复制（所写数字的行数）；　p:粘贴<br>4）x:　删除一个字符； dd:删除一行； dw:删除一个单词（光标要指向单词的第一个字母）； 数字＋dw:删除单词（所写数字个单词）<br>5）0（零）:光标移动到所在行的行首；　$:光标移动到所在行的行尾<br>6）G:光标移动到文件尾； 数字+G:光标移动到所写数字的行（1G:光标移到行首）<br>7）r:替换一个字符；　cw:替换一个单词<br>8）i:在光标当前位置插入； a:在光标所在位置后插入； o（小写字母）:在光标所在行下插入一空行； O（大写字母）:在光标所在行上插入一空行<br><strong>末行模式下：</strong><br>1）:w 保存 :w newfile 存成新文件 　:wq 保存退 　:q!　强退<br>2）:1,$s/旧串/新串/g 替换全文(或 :%s/旧串/新串/g)</p>
-<p>二、编译、运行ＪＡＶＡ时所用到的命令：<br>先mkdir classer src创建两个文件夹<br>javac -d classes src/Hello.java<br>java -cp classes com.briup.chap01.Hello（包名＋类名）（-cp代表classpath,就是类的当前路径）</p>
+          <p>在Linux下用vi编辑器编写JAVA代码，开始时可能相当别扭，当你用熟了后，发现vi编辑器原来十分好用，并且再也不需要鼠标了！！！<br>经过差不多一星期的摸索，下面就来总结一下我用vi编辑器的常用快捷键（以及Linux下的快捷键及编译JAVA的常用命令）：<br>一、vi编辑器分为三中模式：<br>命令模式，末行模式，输入模式<br><strong>命令模式下：</strong><br>1）h , j , k , l为左 ， 下 ， 上 ， 右（移动光标，用起来不怎么习惯，还是常用方向键⊙﹏⊙b）<br>2）u: 撤销上一步操作；　Ctrl +　r:　恢复上一步操作（相当常用）<br>3）yy: 复制一行； 数字＋yy:　复制（所写数字的行数）；　p:粘贴<br>4）x:　删除一个字符； dd:删除一行； dw:删除一个单词（光标要指向单词的第一个字母）； 数字＋dw:删除单词（所写数字个单词）<br>5）0（零）:光标移动到所在行的行首；　$:光标移动到所在行的行尾<br>6）G:光标移动到文件尾； 数字+G:光标移动到所写数字的行（1G:光标移到行首）<br>7）r:替换一个字符；　cw:替换一个单词<br>8）i:在光标当前位置插入； a:在光标所在位置后插入； o（小写字母）:在光标所在行下插入一空行； O（大写字母）:在光标所在行上插入一空行	<br><strong>末行模式下：</strong><br>1）:w 保存 :w newfile 存成新文件 　:wq 保存退 　:q!　强退<br>2）:1,$s&#x2F;旧串&#x2F;新串&#x2F;g 替换全文(或 :%s&#x2F;旧串&#x2F;新串&#x2F;g)</p>
+<p>二、编译、运行ＪＡＶＡ时所用到的命令：<br>先mkdir classer src创建两个文件夹<br>javac -d classes src&#x2F;Hello.java<br>java -cp classes com.briup.chap01.Hello（包名＋类名）（-cp代表classpath,就是类的当前路径）</p>
 
       
     </div>
@@ -374,7 +374,7 @@
 <li>删除线<br>要加删除线的文字左右分别用两个~~号包起来</li>
 </ul>
 <p>示例：<br><code>**这是加粗的文字**</code><br><code>*这是倾斜的文字*</code><br><code>***这是斜体加粗的文字***</code><br><code>~~这是加删除线的文字~~</code><br>效果如下：</p>
-<p><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del>  </p>
+<p><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><em><strong>这是斜体加粗的文字</strong></em><br><del>这是加删除线的文字</del>  </p>
 <h4 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h4><p>在引用的文字前加&gt;即可。<br>示例：<br><code>&gt;这是引用的内容</code>   </p>
 <p>效果如下：</p>
 <blockquote>
@@ -389,15 +389,13 @@
 <hr>
 <p>可以看到，显示效果是一样的。</p>
 <h4 id="五、图片"><a href="#五、图片" class="headerlink" title="五、图片"></a>五、图片</h4><p>语法：<br><code>![图片alt](图片地址 &#39;&#39;图片title&#39;&#39;)</code><br>图片alt就是显示在图片下面的文字，相当于对图片内容的解释。<br>图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加</p>
-<p>示例：<br><code>![blockchain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
-u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;)</code></p>
-<p>效果如下：<br>![blockchain](<a href="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/" target="_blank" rel="noopener">https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/</a><br>u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg “区块链”)  </p>
-<h4 id="六、超链接"><a href="#六、超链接" class="headerlink" title="六、超链接"></a>六、超链接</h4><p>语法：<br><code>[超链接名](超链接地址 &quot;超链接title&quot;)</code><br>title可加可不加<br>示例：<br><a href="http://jianshu.com" target="_blank" rel="noopener">简书</a><br><a href="http://baidu.com" target="_blank" rel="noopener">百度</a></p>
+<p>示例：<br><code>![blockchain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;)</code></p>
+<p>效果如下：<br>![blockchain](<a target="_blank" rel="noopener" href="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/">https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/</a><br>u&#x3D;702257389,1274025419&amp;fm&#x3D;27&amp;gp&#x3D;0.jpg “区块链”)  </p>
+<h4 id="六、超链接"><a href="#六、超链接" class="headerlink" title="六、超链接"></a>六、超链接</h4><p>语法：<br><code>[超链接名](超链接地址 &quot;超链接title&quot;)</code><br>title可加可不加<br>示例：<br><a target="_blank" rel="noopener" href="http://jianshu.com/">简书</a><br><a target="_blank" rel="noopener" href="http://baidu.com/">百度</a></p>
 <p>效果如下：<br>简书<br>百度<br>注：Markdown本身语法不支持链接在新页面中打开，貌似简书做了处理，是可以的。别的平台可能就不行了，如果想要在新页面中打开的话可以用html语言的a标签代替。<br><code>&lt;a href=&quot;超链接地址&quot; target=&quot;_blank&quot;&gt;超链接名&lt;/a&gt;</code><br>示例：<br><a href="https://www.jianshu.com/u/1f5ac0cf6a8b" target="_blank">简书</a></p>
 <h4 id="七、列表"><a href="#七、列表" class="headerlink" title="七、列表"></a>七、列表</h4><ul>
-<li><strong>无序列表</strong><br>语法：<br>无序列表用 - + * 任何一种都可以<br><code>- 列表内容</code><br><code>+ 列表内容</code>  </li>
+<li><strong>无序列表</strong><br>语法：<br>无序列表用 - + * 任何一种都可以<br><code>- 列表内容</code><br><code>+ 列表内容</code><br>** 列表内容</li>
 </ul>
-<p>** 列表内容</p>
 <p>注意：- + * 跟内容之间都要有一个空格</p>
 <p>效果如下：</p>
 <ul>
@@ -410,23 +408,23 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;)</code></p>
 <li>列表内容</li>
 </ul>
 <ul>
-<li><strong>有序列表</strong><br>语法：<br>数字加点<br><code>1.列表内容</code><br><code>2.列表内容</code><br><code>3.列表内容</code>  </li>
+<li><strong>有序列表</strong><br>语法：<br>数字加点<br><code>1.列表内容</code><br><code>2.列表内容</code><br><code>3.列表内容</code></li>
 </ul>
 <p>注意：序号跟内容之间要有空格<br>效果如下：<br>1.列表内容<br>2.列表内容<br>3.列表内容  </p>
 <ul>
-<li><strong>列表嵌套</strong>  </li>
+<li><strong>列表嵌套</strong></li>
 </ul>
 <p>上一级和下一级之间敲三个空格即可</p>
 <ul>
-<li>一级无序列表内容  <ul>
+<li><p>一级无序列表内容  </p>
+<ul>
 <li>二级无序列表内容  </li>
 <li>二级无序列表内容  </li>
-<li>二级无序列表内容  </li>
+<li>二级无序列表内容</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>一级无序列表内容<br> 1.二级有序列表内容<br> 2.二级有序列表内容<br> 3.二级有序列表内容  </li>
+<li><p>一级无序列表内容<br> 1.二级有序列表内容<br> 2.二级有序列表内容<br> 3.二级有序列表内容</p>
+</li>
 </ul>
 <p>1.一级有序列表内容  </p>
 <ul>
@@ -438,9 +436,63 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;)</code></p>
 <ol>
 <li>二级有序列表内容  </li>
 <li>二级有序列表内容  </li>
-<li>二级有序列表内容  </li>
+<li>二级有序列表内容</li>
 </ol>
-<h4 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h4><p>语法：<br>| 一个普通标题 | 一个普通标题 | 一个普通标题 |<br>| —— | —— | —— |<br>| 短文本 | 中等文本 | 稍微长一点的文本 |<br>| 稍微长一点的文本 | 短文本 | 中等文本 |<br><strong><em>注意，使用时发现，表格的语句上一行必须为空行，不然表格不生效。必须使用英文输入法</em></strong><br>示例：<br>姓名|技能|排行<br>–|:–:|–:<br>刘备|哭|大哥<br>关羽|打|二哥<br>张飞|骂|三弟  </p>
+<h4 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h4><p>语法：  </p>
+<table>
+<thead>
+<tr>
+<th>一个普通标题</th>
+<th>一个普通标题</th>
+<th>一个普通标题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>短文本</td>
+<td>中等文本</td>
+<td>稍微长一点的文本</td>
+</tr>
+<tr>
+<td>稍微长一点的文本</td>
+<td>短文本</td>
+<td>中等文本</td>
+</tr>
+<tr>
+<td><em><strong>注意，使用时发现，表格的语句上一行必须为空行，不然表格不生效。必须使用英文输入法</strong></em></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>示例：</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>姓名</td>
+<td>技能</td>
+<td>排行</td>
+</tr>
+<tr>
+<td>–</td>
+<td>:–:</td>
+<td>–:</td>
+</tr>
+<tr>
+<td>刘备</td>
+<td>哭</td>
+<td>大哥</td>
+</tr>
+<tr>
+<td>关羽</td>
+<td>打</td>
+<td>二哥</td>
+</tr>
+<tr>
+<td>张飞</td>
+<td>骂</td>
+<td>三弟</td>
+</tr>
+</tbody></table>
 <p>效果如下：  </p>
 <table>
 <thead>
@@ -471,7 +523,7 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;)</code></p>
 <p>注：为了防止转译，前后三个反引号处加了小括号，实际是没有的。这里只是用来演示，实际中去掉两边小括号即可。</p>
 <p>示例：<br>单行代码<br><code>create database hero;</code></p>
 <p>代码块</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fun()&#123;</span><br><span class="line">     echo &quot;这是一句非常牛逼的代码&quot;;</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fun()&#123;</span><br><span class="line">     echo &quot;这是一句非常牛逼的代码&quot;;</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -547,11 +599,11 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;)</code></p>
 
       
           <p>Hexo 约有二十个命令，但普通用户经常使用的大概只有下列几个:  </p>
-<h6 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a>hexo s</h6><p>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
+<h6 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a>hexo s</h6><p>启动本地服务器，用于预览主题。默认地址： <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
 <ul>
 <li>hexo s 是 hexo server 的缩写，命令效果一致；  </li>
 <li>预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；  </li>
-<li>对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。  </li>
+<li>对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。</li>
 </ul>
 <h6 id="hexo-new"><a href="#hexo-new" class="headerlink" title="hexo new"></a>hexo new</h6><p><code>hexo new &quot;学习笔记 六&quot;</code><br>新建一篇标题为 学习笔记 六 的文章，因为标题里有空格，所以加上了引号。  </p>
 <ul>
@@ -571,7 +623,7 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;)</code></p>
 <li>如果使用自动部署，不需要先执行该命令；</li>
 <li>hexo g 是 hexo generate 的缩写，命令效果一致。</li>
 </ul>
-<h6 id="hexo-new-page"><a href="#hexo-new-page" class="headerlink" title="hexo new page"></a>hexo new page</h6><p><code>hexo new page aboutme</code><br>新建一个标题为 aboutme 的页面，默认链接地址为 主页地址/aboutme/</p>
+<h6 id="hexo-new-page"><a href="#hexo-new-page" class="headerlink" title="hexo new page"></a>hexo new page</h6><p><code>hexo new page aboutme</code><br>新建一个标题为 aboutme 的页面，默认链接地址为 主页地址&#x2F;aboutme&#x2F;</p>
 <ul>
 <li>标题可以为中文，但一般习惯用英文；</li>
 <li>页面标题和文章一样可以随意修改；</li>
@@ -641,13 +693,9 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;)</code></p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p> 可能mysql安装的方式大同小异。我是以rpm方式安装的mysql5.7。对于中文来说，数据库编码一直是个问题（心里一万个**跑过，谁叫mysql是外国人折腾出来），在Linux下设置编码全部永久为utf-8方法如下：（这里不说命令设置，命令行设置是临时的）<br> 在没改配置前，进入mysql运行  show variables like ‘character_set_%’;   来查看当前mysql的字符编码。</p>
-<p><img src="/images/pasted-1.png" alt="upload successful"><br>1.mysql配置文件一般默认为 /etc/my.cnf .（如果你找不到在哪儿，用  find / -iname ‘*.cnf’ -print  来找配置文件），找到配置文件之后。<br>         修改用 vim /etc/my.cnf  。友情提示用root账号修改。</p>
-<pre><code>在[client]下添加（注意：我在进入/etc/my.cnf 里面没有这一项，没有就不加，就只在[mysqld]下加对应的。）
-default-charater-set=utf8
-在[mysqld]下添加
-collation_server = utf8_general_ci
-character_set_server = utf8  </code></pre><p>保存退出后重启mysqld。service mysqld restart   然后登陆mysql看修改的效果  </p>
+          <p> 可能mysql安装的方式大同小异。我是以rpm方式安装的mysql5.7。对于中文来说，数据库编码一直是个问题（心里一万个**跑过，谁叫mysql是外国人折腾出来），在Linux下设置编码全部永久为utf-8方法如下：（这里不说命令设置，命令行设置是临时的）<br> 在没改配置前，进入mysql运行  show variables like ‘character_set_%’;   来查看当前mysql的字符编码。</p>
+<p><img src="/images/pasted-1.png" alt="upload successful"><br>1.mysql配置文件一般默认为 &#x2F;etc&#x2F;my.cnf .（如果你找不到在哪儿，用  find &#x2F; -iname ‘*.cnf’ -print  来找配置文件），找到配置文件之后。<br>         修改用 vim &#x2F;etc&#x2F;my.cnf  。友情提示用root账号修改。</p>
+<p>         在[client]下添加（注意：我在进入&#x2F;etc&#x2F;my.cnf 里面没有这一项，没有就不加，就只在[mysqld]下加对应的。）<br>         default-charater-set&#x3D;utf8<br>         在[mysqld]下添加<br>         collation_server &#x3D; utf8_general_ci<br>         character_set_server &#x3D; utf8<br>保存退出后重启mysqld。service mysqld restart   然后登陆mysql看修改的效果  </p>
 <p><img src="/images/pasted-2.png" alt="upload successful"></p>
 
       
@@ -724,19 +772,19 @@ character_set_server = utf8  </code></pre><p>保存退出后重启mysqld。servi
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Centos7防火墙相关shell命令"><a href="#Centos7防火墙相关shell命令" class="headerlink" title="Centos7防火墙相关shell命令"></a>Centos7防火墙相关shell命令</h2><h3 id="1-防火墙新开放端口"><a href="#1-防火墙新开放端口" class="headerlink" title="1.防火墙新开放端口"></a>1.防火墙新开放端口</h3><p>firewall-cmd -&zwnj;-add-port=8301/tcp -&zwnj;-permanen</p>
-<h3 id="2-查看已开发端口"><a href="#2-查看已开发端口" class="headerlink" title="2.查看已开发端口"></a>2.查看已开发端口</h3><p>firewall-cmd -&zwnj;-zone=public -&zwnj;-list-ports</p>
+          <h2 id="Centos7防火墙相关shell命令"><a href="#Centos7防火墙相关shell命令" class="headerlink" title="Centos7防火墙相关shell命令"></a>Centos7防火墙相关shell命令</h2><h3 id="1-防火墙新开放端口"><a href="#1-防火墙新开放端口" class="headerlink" title="1.防火墙新开放端口"></a>1.防火墙新开放端口</h3><p>firewall-cmd -&zwnj;-add-port&#x3D;8301&#x2F;tcp -&zwnj;-permanen</p>
+<h3 id="2-查看已开发端口"><a href="#2-查看已开发端口" class="headerlink" title="2.查看已开发端口"></a>2.查看已开发端口</h3><p>firewall-cmd -&zwnj;-zone&#x3D;public -&zwnj;-list-ports</p>
 <h3 id="3-防火墙重启"><a href="#3-防火墙重启" class="headerlink" title="3.防火墙重启"></a>3.防火墙重启</h3><p>firewall-cmd -&zwnj;-reload  </p>
 <h3 id="4-进程保护启动"><a href="#4-进程保护启动" class="headerlink" title="4.进程保护启动"></a>4.进程保护启动</h3><p>nohup ***  &amp;</p>
 <h2 id="Mysql相关shell命令"><a href="#Mysql相关shell命令" class="headerlink" title="Mysql相关shell命令"></a>Mysql相关shell命令</h2><h3 id="1-MySql-启动"><a href="#1-MySql-启动" class="headerlink" title="1.MySql 启动"></a>1.MySql 启动</h3><p>service mysqld start  </p>
 <h3 id="2-某个数据库是否存在"><a href="#2-某个数据库是否存在" class="headerlink" title="2.某个数据库是否存在"></a>2.某个数据库是否存在</h3><p>show databases like ‘db_name’</p>
 <h3 id="3-某个数据表是否存在"><a href="#3-某个数据表是否存在" class="headerlink" title="3.某个数据表是否存在"></a>3.某个数据表是否存在</h3><p>show table like ‘table_name’  </p>
-<h3 id="4-创建数据库"><a href="#4-创建数据库" class="headerlink" title="4.创建数据库"></a>4.创建数据库</h3><p>create database db_name<br><font color=red>注意：当db_name包含关键字时，应使用 `db_name`,` 不是单引号，是Tab上面符合 </font>  </p>
+<h3 id="4-创建数据库"><a href="#4-创建数据库" class="headerlink" title="4.创建数据库"></a>4.创建数据库</h3><p>create database db_name<br><font color=red>注意：当db_name包含关键字时，应使用 `db_name`,&#96; 不是单引号，是Tab上面符合 </font>  </p>
 <h3 id="5-执行sql文件"><a href="#5-执行sql文件" class="headerlink" title="5.执行sql文件"></a>5.执行sql文件</h3><p>source sql文件，例如：source db.sql</p>
 <h2 id="ln-命令"><a href="#ln-命令" class="headerlink" title="ln 命令"></a>ln 命令</h2><p>Linux ln命令是一个非常重要命令，它的功能是为某一个文件在另外一个位置建立一个同步的链接。</p>
 <p>当我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在 其它的目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。<br>例如：<br><img src="/images/pasted-3.png" alt="upload successful"><br>图片中显示 pm2命令不存在，利用 ln -s 命令即可将pm2命令配置到全局<br><code>ln -s /usr/local/node-v8.9.3-linux-x64/bin/pm2 /usr/local/bin/</code>  </p>
 <p>说明: <code>echo $PATH</code> 指令查看当前系统全局环境PATH路径</p>
-<h3 id="unzip-zip-d-demofolder"><a href="#unzip-zip-d-demofolder" class="headerlink" title="unzip **.zip -d /demofolder"></a>unzip **.zip -d /demofolder</h3><p>解压到指定目录</p>
+<h3 id="unzip-zip-d-demofolder"><a href="#unzip-zip-d-demofolder" class="headerlink" title="unzip **.zip -d &#x2F;demofolder"></a>unzip **.zip -d &#x2F;demofolder</h3><p>解压到指定目录</p>
 
       
     </div>

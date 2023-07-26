@@ -46,12 +46,12 @@
   };
 </script>
 
-  <meta name="description" content="Centos7防火墙相关shell命令1.防火墙新开放端口firewall-cmd -&amp;zwnj;-add-port&#x3D;8301&#x2F;tcp -&amp;zwnj;-permanen 2.查看已开发端口firewall-cmd -&amp;zwnj;-zone&#x3D;public -&amp;zwnj;-list-ports 3.防火墙重启firewall-cmd -&amp;zwnj;-reload   4.进程保护启动nohup ***">
+  <meta name="description" content="Centos7防火墙相关shell命令1.防火墙新开放端口firewall-cmd -&amp;zwnj;-add-port&#x3D;8301&#x2F;tcp -&amp;zwnj;-permanen 2.查看已开发端口firewall-cmd -&amp;zwnj;-zone&#x3D;public -&amp;zwnj;-list-ports 3.防火墙重启firewall-cmd -&amp;zwnj;-reload   4.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shell常用指令">
 <meta property="og:url" content="http://yoursite.com/2018/12/17/Shell%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Mjie&#39;s Blog">
-<meta property="og:description" content="Centos7防火墙相关shell命令1.防火墙新开放端口firewall-cmd -&amp;zwnj;-add-port&#x3D;8301&#x2F;tcp -&amp;zwnj;-permanen 2.查看已开发端口firewall-cmd -&amp;zwnj;-zone&#x3D;public -&amp;zwnj;-list-ports 3.防火墙重启firewall-cmd -&amp;zwnj;-reload   4.进程保护启动nohup ***">
+<meta property="og:description" content="Centos7防火墙相关shell命令1.防火墙新开放端口firewall-cmd -&amp;zwnj;-add-port&#x3D;8301&#x2F;tcp -&amp;zwnj;-permanen 2.查看已开发端口firewall-cmd -&amp;zwnj;-zone&#x3D;public -&amp;zwnj;-list-ports 3.防火墙重启firewall-cmd -&amp;zwnj;-reload   4.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/pasted-3.png">
 <meta property="article:published_time" content="2018-12-17T05:40:08.000Z">
@@ -231,19 +231,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Centos7防火墙相关shell命令"><a href="#Centos7防火墙相关shell命令" class="headerlink" title="Centos7防火墙相关shell命令"></a>Centos7防火墙相关shell命令</h2><h3 id="1-防火墙新开放端口"><a href="#1-防火墙新开放端口" class="headerlink" title="1.防火墙新开放端口"></a>1.防火墙新开放端口</h3><p>firewall-cmd -&zwnj;-add-port=8301/tcp -&zwnj;-permanen</p>
-<h3 id="2-查看已开发端口"><a href="#2-查看已开发端口" class="headerlink" title="2.查看已开发端口"></a>2.查看已开发端口</h3><p>firewall-cmd -&zwnj;-zone=public -&zwnj;-list-ports</p>
+        <h2 id="Centos7防火墙相关shell命令"><a href="#Centos7防火墙相关shell命令" class="headerlink" title="Centos7防火墙相关shell命令"></a>Centos7防火墙相关shell命令</h2><h3 id="1-防火墙新开放端口"><a href="#1-防火墙新开放端口" class="headerlink" title="1.防火墙新开放端口"></a>1.防火墙新开放端口</h3><p>firewall-cmd -&zwnj;-add-port&#x3D;8301&#x2F;tcp -&zwnj;-permanen</p>
+<h3 id="2-查看已开发端口"><a href="#2-查看已开发端口" class="headerlink" title="2.查看已开发端口"></a>2.查看已开发端口</h3><p>firewall-cmd -&zwnj;-zone&#x3D;public -&zwnj;-list-ports</p>
 <h3 id="3-防火墙重启"><a href="#3-防火墙重启" class="headerlink" title="3.防火墙重启"></a>3.防火墙重启</h3><p>firewall-cmd -&zwnj;-reload  </p>
 <h3 id="4-进程保护启动"><a href="#4-进程保护启动" class="headerlink" title="4.进程保护启动"></a>4.进程保护启动</h3><p>nohup ***  &amp;</p>
 <h2 id="Mysql相关shell命令"><a href="#Mysql相关shell命令" class="headerlink" title="Mysql相关shell命令"></a>Mysql相关shell命令</h2><h3 id="1-MySql-启动"><a href="#1-MySql-启动" class="headerlink" title="1.MySql 启动"></a>1.MySql 启动</h3><p>service mysqld start  </p>
 <h3 id="2-某个数据库是否存在"><a href="#2-某个数据库是否存在" class="headerlink" title="2.某个数据库是否存在"></a>2.某个数据库是否存在</h3><p>show databases like ‘db_name’</p>
 <h3 id="3-某个数据表是否存在"><a href="#3-某个数据表是否存在" class="headerlink" title="3.某个数据表是否存在"></a>3.某个数据表是否存在</h3><p>show table like ‘table_name’  </p>
-<h3 id="4-创建数据库"><a href="#4-创建数据库" class="headerlink" title="4.创建数据库"></a>4.创建数据库</h3><p>create database db_name<br><font color=red>注意：当db_name包含关键字时，应使用 `db_name`,` 不是单引号，是Tab上面符合 </font>  </p>
+<h3 id="4-创建数据库"><a href="#4-创建数据库" class="headerlink" title="4.创建数据库"></a>4.创建数据库</h3><p>create database db_name<br><font color=red>注意：当db_name包含关键字时，应使用 `db_name`,&#96; 不是单引号，是Tab上面符合 </font>  </p>
 <h3 id="5-执行sql文件"><a href="#5-执行sql文件" class="headerlink" title="5.执行sql文件"></a>5.执行sql文件</h3><p>source sql文件，例如：source db.sql</p>
 <h2 id="ln-命令"><a href="#ln-命令" class="headerlink" title="ln 命令"></a>ln 命令</h2><p>Linux ln命令是一个非常重要命令，它的功能是为某一个文件在另外一个位置建立一个同步的链接。</p>
 <p>当我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在 其它的目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。<br>例如：<br><img src="/images/pasted-3.png" alt="upload successful"><br>图片中显示 pm2命令不存在，利用 ln -s 命令即可将pm2命令配置到全局<br><code>ln -s /usr/local/node-v8.9.3-linux-x64/bin/pm2 /usr/local/bin/</code>  </p>
 <p>说明: <code>echo $PATH</code> 指令查看当前系统全局环境PATH路径</p>
-<h3 id="unzip-zip-d-demofolder"><a href="#unzip-zip-d-demofolder" class="headerlink" title="unzip **.zip -d /demofolder"></a>unzip **.zip -d /demofolder</h3><p>解压到指定目录</p>
+<h3 id="unzip-zip-d-demofolder"><a href="#unzip-zip-d-demofolder" class="headerlink" title="unzip **.zip -d &#x2F;demofolder"></a>unzip **.zip -d &#x2F;demofolder</h3><p>解压到指定目录</p>
 
     </div>
 
